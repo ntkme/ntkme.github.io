@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>github:buttons</title>
+<link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://cloud.typography.com/6776312/789566/css/fonts.css">
+<link type="application/atom+xml" rel="alternate" href="https://ntk.me/feed.xml" title="夏樹の時間" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="github:buttons" />
+<meta name="author" content="なつき" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The buttons for developers" />
+<meta property="og:description" content="The buttons for developers" />
+<link rel="canonical" href="https://ntk.me/2014/01/02/github-buttons/" />
+<meta property="og:url" content="https://ntk.me/2014/01/02/github-buttons/" />
+<meta property="og:site_name" content="夏樹の時間" />
+<meta property="og:image" content="https://ntk.me/assets/img/2014/01/02/github-buttons/github-buttons@2x.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-01-02T00:00:00-08:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://ntk.me/assets/img/2014/01/02/github-buttons/github-buttons@2x.png" />
+<meta property="twitter:title" content="github:buttons" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"なつき","url":"https://ntk.me/about/"},"dateModified":"2014-01-02T00:00:00-08:00","datePublished":"2014-01-02T00:00:00-08:00","description":"The buttons for developers","headline":"github:buttons","image":"https://ntk.me/assets/img/2014/01/02/github-buttons/github-buttons@2x.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://ntk.me/2014/01/02/github-buttons/"},"url":"https://ntk.me/2014/01/02/github-buttons/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+  <body>
+    <div class="container my-3 my-md-4 my-xl-5"><header class="my-2">
+  <nav class="navbar navbar-expand py-2">
+    <a class="navbar-brand me-auto" href="/">
+      <h1>夏樹の時間</h1>
+      <h2 class="lead">なりきる、なったつもりで</h2>
+    </a>
+    <ul class="navbar-nav d-print-none me-auto me-sm-0"><li class="nav-item">
+        <a class="nav-link" href="/archive/">
+          <span aria-hidden="true">&nbsp;&#x2756;&nbsp;</span>posts
+          </a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/works/">
+          <span aria-hidden="true">&nbsp;&#x2605;&nbsp;</span>works
+          </a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/about/">
+          <span aria-hidden="true">&nbsp;&#x273f;&nbsp;</span>about
+          </a>
+      </li></ul>
+  </nav>
+</header>
+<main class="my-2">
+        <article class="py-2">
+          <header>
+            <h1>github:buttons</h1>
+            <h2>The buttons for developers</h2>
+          </header>
+          <section class="html-md"><h1 id="introducing-the-unofficial-githubbuttons">Introducing the Unofficial github:buttons</h1>
+
+<p><img src="/assets/img/2014/01/02/github-buttons/github-buttons@2x.png" alt="github:buttons" srcset="/assets/img/2014/01/02/github-buttons/github-buttons@2x.png 2x" /></p>
+
+<p>Made by developer and for developers, <a href="https://buttons.github.io/">github:buttons</a> used a very different approach comparing to other github buttons service.  It was designed with the flexibility to customize almost everything including link, text, icon, and count.  Unlike the widely used <a href="https://github.com/mdo/github-buttons">mdo/github-buttons</a>, in this <strong>pixel perfect</strong> <a href="https://github.com/ntkme/github-buttons">ntkme/github-buttons</a>, you will never worry about iframe sizing and overflowing.</p>
+
+<p><strong><a href="https://buttons.github.io/">Get started!</a></strong></p>
+
+<hr />
+
+<h1 id="the-making-of-the-githubbuttons">The Making of the github:buttons</h1>
+
+<h2 id="iframe">&lt;iframe&gt;</h2>
+
+<p>Twitter, Facebook, Google+ …  All buttons services from those big vendors are based on iframe.  Why?  Because iframe is protected by <a href="https://developer.mozilla.org/docs/Web/Security/Same-origin_policy">same-origin policy</a>, which means it won’t be affected by stylesheets or scripts in parent window.</p>
+
+<h3 id="its-all-about-the-same-origin-policy">It’s all about the same-origin policy</h3>
+
+<p>Saying that your website is hosted on domain A, and the buttons are hosted on the domain B, what would happen to the button iframe?  Well, first of all, if the button iframe on domain B is embedded directly, there is no way to get its content size because the access to its content is blocked by same-origin policy.  That’s exactly the problem <a href="https://github.com/mdo/github-buttons">mdo/github-buttons</a> faces.  What about render the button in an empty iframe?  Not a bad idea.  In that case, since the iframe does not have the src attribute, it’s considered to be in the same-origin as domain A.  However, web fonts from domain B will be blocked in the iframe on domain A unless the <a href="https://www.w3.org/TR/cors/">Cross-Origin Resource Sharing</a> on domain B is properly configured.</p>
+
+<p>So, the answer is combining the two cases here.</p>
+
+<ol>
+  <li>Create an empty iframe as a sandbox in domain A and render the button.</li>
+  <li>Calculate the rendered button size.</li>
+  <li>Open a new iframe in domain B and render the button again.</li>
+  <li>Set the new iframe size to fit the previously calculated button size.</li>
+</ol>
+
+<h4 id="pixel-perfect-content-size">Pixel Perfect Content Size</h4>
+
+<p>The default size of an iframe is 300px by 150px, which can change the document flow significantly.  So, it comes the idea of hiding an iframe before it is resized properly.  <code class="language-plaintext highlighter-rouge">visibility: hidden;</code> simply does not work because it still takes up space.  <code class="language-plaintext highlighter-rouge">display: none;</code> is not a choice because IE 11 does not render it at all.  The only way to do it correctly is setting <code class="language-plaintext highlighter-rouge">width: 1px; height: 0;</code>.  With that, calling <code class="language-plaintext highlighter-rouge">body.scrollWidth()</code> and <code class="language-plaintext highlighter-rouge">body.scrollHeight()</code> should return the content size of an iframe.</p>
+
+<p>That is not the end of the story.  <code class="language-plaintext highlighter-rouge">body.scrollWidth()</code> returns an integer rounded from the actual float value.  On an @2x display, the size can be off by 1/2px.  In the case that the number is rounded down, the iframe will be cut off.  The solution is to use <code class="language-plaintext highlighter-rouge">body.getBoundingClientRect()</code>, which returns the float, and ceil it to the closest physical pixel.</p>
+
+<p>However, that is still not the end of the story.  WebKit rounds down iframe size to closest 1/2px on @3x display, which means that in the worst case the iframe will be cut off by 1/3px.  Thus, the ultimate solution is to round the float to the closest physical pixel, then ceil the value to closest 1/2px, which is illustrated by the following formula.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">px</span> <span class="o">*</span> <span class="nx">devicePixelRatio</span><span class="p">)</span> <span class="o">/</span> <span class="nx">devicePixelRatio</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">||</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<h4 id="iframeonload">iframe.onload</h4>
+
+<p>iframe onload event is not reliable because some browsers implemented the onload event in a wrong way, especially when there are DOM changes during the page loading.  In my tests, IE 9 and Android Browser 2.x fire the onload event before the dynamically injected sciprts complete execution.  Presto-based Opera has a even more interesting bug.  With memory cache turned on, it will never fullfill a javascript request in iframe that is dynamically injected before DOM ready, after the file is cached in memory.  So, a polyfill for the iframe.onload event is required for those browsers.</p>
+
+<hr />
+
+<h2 id="script-async-deferscript">&lt;script async defer&gt;&lt;/script&gt;</h2>
+
+<p><strong>Performance</strong> does matter.</p>
+
+<p>So both async and defer attribute are used on the script element.  They ensure that the script will never slow down the DOM loading.  Also, to reduce requests, the scripts used in parent window and iframe are combined into one script, which lets the browser read it from cache.</p>
+
+<hr />
+
+<h2 id="octicons">Octicons</h2>
+
+<p>GitHub’s iconic web font is pretty awesome, but it brings a little bit trouble.  Most of the major browsers request a web font only after they found it’s used somewhere in the web page, and they load the web fonts <em>asynchronously</em>.  Sometimes it happens that the <code class="language-plaintext highlighter-rouge">window.onload</code> event is fired earlier than the web fonts are rendered, which leads to the incorrect iframe size.</p>
+
+<p>In addition, there is no native <code class="language-plaintext highlighter-rouge">load</code> event for web font.  The <a href="https://github.com/typekit/webfontloader">typekit/webfontloader</a> may be a solution, but it still load the web font <em>asynchronously</em>, so it doesn’t help much.  The web font loader also increases the requests and slows down the whole process in this situation.</p>
+
+<h3 id="pre-rendering-octicons">Pre-rendering Octicons</h3>
+
+<p>The only reliable choice left is pre-rendering, because it doesn’t depend on the web font load event.  I calculated all the icon sizes in em unit, then generated a stylesheet containing their sizes.</p>
+
+<h3 id="if-lte-ie-8-octicons-endif">&lt;!–[if lte IE 8]–&gt; Octicons &lt;![endif]–&gt;</h3>
+
+<p>This project <strong>do</strong> support the old IE.  It sounds crazy, isn’t it?  Actually it is not too difficult since most of the incompatibilities are came from the octicons.</p>
+
+<p>IE 6 and 7 don’t support css pseudo-elements <code class="language-plaintext highlighter-rouge">:before</code> and <code class="language-plaintext highlighter-rouge">:after</code>, so I use a css expression hack like this one.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.octicon-mark-github</span> <span class="p">{</span> <span class="py">zoom</span><span class="p">:</span> <span class="n">expression</span><span class="p">(</span> <span class="n">this</span><span class="p">.</span><span class="n">innerHTML</span> <span class="err">=</span> <span class="s2">'&amp;#xf00a;'</span> <span class="p">);</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>IE 8 is worse than IE 6 and 7.  Although IE 8 supports <code class="language-plaintext highlighter-rouge">:before</code> used in octicons, it still <em>randomly</em> uses the local font instead of the octicons.  <a href="https://stackoverflow.com/questions/9809351">This related question on Stack Overflow</a> gives a solution that forcing IE 8 to redraw octicons.</p>
+
+<hr />
+
+<h1 id="still-want-to-know-more">Still want to know more?</h1>
+
+<p>Take a look at <a href="https://github.com/ntkme/github-buttons">ntkme/github-buttons</a>!</p>
+</section>
+          <footer class="row"><div class="col text-start">
+              <div><span aria-hidden="true">&#x2190;&#xfe0e;&nbsp;</span>Previous</div>
+              <a class="nav-link p-0" href="/2013/12/01/iesd/" rel="prev">iESD</a>
+            </div><div class="col text-center">
+              <div>Posted on</div>
+              <time datetime="2014-01-02T00:00:00-08:00">02 Jan 2014</time>
+            </div><div class="col text-end">
+              <div>Next<span aria-hidden="true">&nbsp;&#x2192;&#xfe0e;</span></div>
+              <a class="nav-link p-0" href="/2015/01/29/shunshou/" rel="next">春宵</a>
+            </div></footer>
+        </article>
+      </main><aside class="my-2 d-print-none"><section class="py-2">
+    <h1 class="h3">Talk to me</h1>
+    <ul class="nav row"><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="https://twitter.com/intent/tweet?related=ntkme&amp;screen_name=ntkme&amp;text=https%3A%2F%2Fntk.me%2F2014%2F01%2F02%2Fgithub-buttons%2F" target="_blank" rel="noopener">
+          <h2 class="lead">Tweet @ntkme</h2>
+          <span>for quick replies</span>
+        </a>
+      </li><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="mailto:i@ntk.me?subject=github%3Abuttons">
+          <h2 class="lead">Email me</h2>
+          <span>for long replies</span>
+        </a>
+      </li></ul>
+  </section><section class="py-2">
+    <h1 class="h3">Follow me</h1>
+    <ul class="nav row"><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="https://twitter.com/ntkme" target="_blank" rel="noopener">
+          <h2 class="lead">on Twitter</h2>
+          <span>for new updates</span>
+        </a>
+      </li><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="https://github.com/ntkme" target="_blank" rel="noopener">
+          <h2 class="lead">on GitHub</h2>
+          <span>for new projects</span>
+        </a>
+      </li><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="/feed.xml" target="_blank">
+          <h2 class="lead">via Feed</h2>
+          <span>for new posts</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+</aside>
+<footer class="my-2"><section class="py-2">
+    <p>Copyright © <time datetime="2022-03-09T10:25:55-08:00">2022</time> <a class="nav-link d-inline" href="https://ntk.me/about/" rel="author">なつき</a>.<br>All rights reserved.</p>
+  </section></footer>
+</div>
+  </body>
+</html>

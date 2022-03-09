@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>Pro Display XDR on Windows PC</title>
+<link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://cloud.typography.com/6776312/789566/css/fonts.css">
+<link type="application/atom+xml" rel="alternate" href="https://ntk.me/feed.xml" title="夏樹の時間" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Pro Display XDR on Windows PC" />
+<meta name="author" content="なつき" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="6K 60Hz 10-bit HDR without Thunderbolt 3" />
+<meta property="og:description" content="6K 60Hz 10-bit HDR without Thunderbolt 3" />
+<link rel="canonical" href="https://ntk.me/2021/10/12/pro-display-xdr-on-windows-pc/" />
+<meta property="og:url" content="https://ntk.me/2021/10/12/pro-display-xdr-on-windows-pc/" />
+<meta property="og:site_name" content="夏樹の時間" />
+<meta property="og:image" content="https://ntk.me/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/settings@2x.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-10-12T00:00:00-07:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://ntk.me/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/settings@2x.png" />
+<meta property="twitter:title" content="Pro Display XDR on Windows PC" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"なつき","url":"https://ntk.me/about/"},"dateModified":"2021-10-12T00:00:00-07:00","datePublished":"2021-10-12T00:00:00-07:00","description":"6K 60Hz 10-bit HDR without Thunderbolt 3","headline":"Pro Display XDR on Windows PC","image":"https://ntk.me/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/settings@2x.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://ntk.me/2021/10/12/pro-display-xdr-on-windows-pc/"},"url":"https://ntk.me/2021/10/12/pro-display-xdr-on-windows-pc/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+  <body>
+    <div class="container my-3 my-md-4 my-xl-5"><header class="my-2">
+  <nav class="navbar navbar-expand py-2">
+    <a class="navbar-brand me-auto" href="/">
+      <h1>夏樹の時間</h1>
+      <h2 class="lead">なりきる、なったつもりで</h2>
+    </a>
+    <ul class="navbar-nav d-print-none me-auto me-sm-0"><li class="nav-item">
+        <a class="nav-link" href="/archive/">
+          <span aria-hidden="true">&nbsp;&#x2756;&nbsp;</span>posts
+          </a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/works/">
+          <span aria-hidden="true">&nbsp;&#x2605;&nbsp;</span>works
+          </a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/about/">
+          <span aria-hidden="true">&nbsp;&#x273f;&nbsp;</span>about
+          </a>
+      </li></ul>
+  </nav>
+</header>
+<main class="my-2">
+        <article class="py-2">
+          <header>
+            <h1>Pro Display XDR on Windows PC</h1>
+            <h2>6K 60Hz 10-bit HDR without Thunderbolt 3</h2>
+          </header>
+          <section class="html-md"><h1 id="pro-display-xdr-over-usb-32-gen-22-with-dsc">Pro Display XDR over USB 3.2 Gen 2×2 with DSC</h1>
+
+<p><img src="/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/settings@2x.png" alt="Settings &gt; Display &gt; Advanced display" srcset="/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/settings@2x.png 2x" /></p>
+
+<p>When Pro Display XDR is connected via the 40 Gbit/s Thunderbolt 3, it uses dual-link SST DisplayPort in High Bit Rate 3 (HBR3) mode.  A bandwidth of 36.64 Gbit/s is required for transmitting uncompressed 6K 60Hz 10-bit HDR video.  36.64 Gbit/s greatly exceeded the 20 Gbit/s of USB 3.2 Gen 2×2, thus it is not possible to transmit the video uncompressed over USB 3.2 Gen 2×2.</p>
+
+<p>However, it is lesser-known that Apple’s Pro Display XDR can actually run at its full <code class="language-plaintext highlighter-rouge">6016 × 3384, 60 Hz</code> with 10-bit HDR, without even using Thunderbolt 3.</p>
+
+<p>To use Pro Display XDR over USB 3.2 Gen 2×2, the video graphics card must support <a href="https://vesa.org/vesa-display-compression-codecs/dsc/">DSC (Display Stream Compression)</a>, a <em>visually lossless</em> compression standard.  With 10-bit HDR (30 bpp) compressed to 12 bpp at 2.5:1 compression ratio, the bandwidth required to deliver compressed 6K 60Hz 10-bit HDR video is only 14.66 Gbit/s.</p>
+
+<p>When Pro Display XDR is connected via USB 3.2 Gen 2×2, it uses single-link SST DisplayPort in High Bit Rate 2 (HBR2) mode.  The required bandwidth of 14.66 Gbit/s for transmitting compressed 6K 60Hz 10-bit HDR video is less than the 17.28 Gbit/s of HBR2.  USB-C DisplayPort Alternate Mode does not employ USB 2.0 lanes, so DisplayPort Alternate Mode can be used together with USB 2.0 for video and data transmission via a single cable.</p>
+
+<h2 id="adapters--cables">Adapters &amp; Cables</h2>
+
+<p>The key to get Pro Display XDR to work with USB 3.2 Gen 2×2 is to use a correct adapter or cable.</p>
+
+<p>For video graphics cards that have a built-in USB-C VirtualLink port, like Nvidia GeForce RTX 20 series or AMD Radeon RX 6000 series, full-featured USB-C to USB-C cables certified for 20 Gbps should work.  However, do not use active Thunderbolt 3 cables like the Thunderbolt 3 Pro Cable which comes with Pro Display XDR, because active Thunderbolt 3 cables are not backward compatible with USB 3.</p>
+
+<p>For video graphics cards that lack of a built-in USB-C VirtualLink port, a <strong>bidirectional</strong> USB-C to DisplayPort adapter or cable is needed.  In additional, in order to use the USB hub on the back of Pro Display XDR, adjust brightness, or change display preset, an adapter or cable that supports USB 2.0 lanes is required.</p>
+
+<p>It might sound weird, but the best DisplayPort to USB-C cable for Pro Display XDR available today is the <a href="https://www.belkin.com/us/support-article?articleNum=316883">Belkin Charge and Sync Cable for Huawei VR Glass</a>.</p>
+
+<h2 id="installing-apple-boot-camp-drivers">Installing Apple Boot Camp Drivers</h2>
+
+<p><img src="/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/boot-camp-control-panel@2x.png" alt="Boot Camp Control Panel" srcset="/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/boot-camp-control-panel@2x.png 2x" /></p>
+
+<p>Boot Camp drivers need to be installed to adjust brightness or change display preset under Windows.</p>
+
+<p>To install Boot Camp on any Windows PC, start the installer from Command Prompt:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>msiexec /i BootCamp.msi
+</code></pre></div></div>
+
+<hr />
+
+<p>With the right graphics card, the right cable, and right drivers, Pro Display XDR can deliver brilliant 6K 60Hz 10-bit HDR with its full functionality on any Windows PC.</p>
+</section>
+          <footer class="row"><div class="col text-start">
+              <div><span aria-hidden="true">&#x2190;&#xfe0e;&nbsp;</span>Previous</div>
+              <a class="nav-link p-0" href="/2021/05/14/podman-in-crostini/" rel="prev">Podman in Crostini</a>
+            </div><div class="col text-center">
+              <div>Posted on</div>
+              <time datetime="2021-10-12T00:00:00-07:00">12 Oct 2021</time>
+            </div><div class="col text-end">
+              <div>Archive<span aria-hidden="true">&nbsp;&#x2192;&#xfe0e;</span></div>
+              <a class="nav-link p-0" href="/archive/">More Posts</a>
+            </div></footer>
+        </article>
+      </main><aside class="my-2 d-print-none"><section class="py-2">
+    <h1 class="h3">Talk to me</h1>
+    <ul class="nav row"><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="https://twitter.com/intent/tweet?related=ntkme&amp;screen_name=ntkme&amp;text=https%3A%2F%2Fntk.me%2F2021%2F10%2F12%2Fpro-display-xdr-on-windows-pc%2F" target="_blank" rel="noopener">
+          <h2 class="lead">Tweet @ntkme</h2>
+          <span>for quick replies</span>
+        </a>
+      </li><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="mailto:i@ntk.me?subject=Pro+Display+XDR+on+Windows+PC">
+          <h2 class="lead">Email me</h2>
+          <span>for long replies</span>
+        </a>
+      </li></ul>
+  </section><section class="py-2">
+    <h1 class="h3">Follow me</h1>
+    <ul class="nav row"><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="https://twitter.com/ntkme" target="_blank" rel="noopener">
+          <h2 class="lead">on Twitter</h2>
+          <span>for new updates</span>
+        </a>
+      </li><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="https://github.com/ntkme" target="_blank" rel="noopener">
+          <h2 class="lead">on GitHub</h2>
+          <span>for new projects</span>
+        </a>
+      </li><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="/feed.xml" target="_blank">
+          <h2 class="lead">via Feed</h2>
+          <span>for new posts</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+</aside>
+<footer class="my-2"><section class="py-2">
+    <p>Copyright © <time datetime="2022-03-09T10:25:55-08:00">2022</time> <a class="nav-link d-inline" href="https://ntk.me/about/" rel="author">なつき</a>.<br>All rights reserved.</p>
+  </section></footer>
+</div>
+  </body>
+</html>

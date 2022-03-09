@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>OS X on OS X</title>
+<link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://cloud.typography.com/6776312/789566/css/fonts.css">
+<link type="application/atom+xml" rel="alternate" href="https://ntk.me/feed.xml" title="夏樹の時間" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="OS X on OS X" />
+<meta name="author" content="なつき" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Running OS X on VirtualBox" />
+<meta property="og:description" content="Running OS X on VirtualBox" />
+<link rel="canonical" href="https://ntk.me/2012/09/07/os-x-on-os-x/" />
+<meta property="og:url" content="https://ntk.me/2012/09/07/os-x-on-os-x/" />
+<meta property="og:site_name" content="夏樹の時間" />
+<meta property="og:image" content="https://ntk.me/assets/img/2012/09/07/os-x-on-os-x/about-this-mac.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-09-07T00:00:00-07:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://ntk.me/assets/img/2012/09/07/os-x-on-os-x/about-this-mac.png" />
+<meta property="twitter:title" content="OS X on OS X" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"なつき","url":"https://ntk.me/about/"},"dateModified":"2012-09-07T00:00:00-07:00","datePublished":"2012-09-07T00:00:00-07:00","description":"Running OS X on VirtualBox","headline":"OS X on OS X","image":"https://ntk.me/assets/img/2012/09/07/os-x-on-os-x/about-this-mac.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://ntk.me/2012/09/07/os-x-on-os-x/"},"url":"https://ntk.me/2012/09/07/os-x-on-os-x/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+  <body>
+    <div class="container my-3 my-md-4 my-xl-5"><header class="my-2">
+  <nav class="navbar navbar-expand py-2">
+    <a class="navbar-brand me-auto" href="/">
+      <h1>夏樹の時間</h1>
+      <h2 class="lead">なりきる、なったつもりで</h2>
+    </a>
+    <ul class="navbar-nav d-print-none me-auto me-sm-0"><li class="nav-item">
+        <a class="nav-link" href="/archive/">
+          <span aria-hidden="true">&nbsp;&#x2756;&nbsp;</span>posts
+          </a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/works/">
+          <span aria-hidden="true">&nbsp;&#x2605;&nbsp;</span>works
+          </a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/about/">
+          <span aria-hidden="true">&nbsp;&#x273f;&nbsp;</span>about
+          </a>
+      </li></ul>
+  </nav>
+</header>
+<main class="my-2">
+        <article class="py-2">
+          <header>
+            <h1>OS X on OS X</h1>
+            <h2>Running OS X on VirtualBox</h2>
+          </header>
+          <section class="html-md"><p><img src="/assets/img/2012/09/07/os-x-on-os-x/about-this-mac.png" alt="About This Mac" /></p>
+
+<h1 id="virtual-os-x-on-macintosh">Virtual OS X on Macintosh</h1>
+
+<p>OS X on <a href="https://www.virtualbox.org/">VirtualBox</a> is nothing but all kinds of troubles.  Even though OS X guests are now supported in the lastest VirtualBox, it still has several issues.  After investigated the boot process of OS X, I finally made OS X Lion and later working in VirtualBox.</p>
+
+<hr />
+
+<h2 id="requirement">Requirement</h2>
+
+<ol>
+  <li>Install OS X.app purchased in Mac App Store</li>
+  <li><a href="https://github.com/ntkme/iesd">iESD</a></li>
+</ol>
+
+<hr />
+
+<h2 id="virtualbox-settings">VirtualBox Settings</h2>
+
+<ul>
+  <li>Operating System Version: Mac OS X (64 bit)</li>
+  <li>Base Memory: 2048 MB (larger is better)</li>
+  <li><strong>Enable EFI</strong></li>
+</ul>
+
+<p>In the lastest VirtualBox, all the default settings work well.</p>
+
+<blockquote>
+  <p>Some people encountered black screen upon booting the virtual machine.  They reported that changing the default chipset ICH9 to PIIX3 fixes this issue.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="prepare-install-disk">Prepare Install Disk</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>iesd
+</code></pre></div></div>
+
+<blockquote>
+  <p>iESD requires ruby-1.9.2 or later.</p>
+</blockquote>
+
+<h4 id="el-capitan">El Capitan</h4>
+
+<p>Apple finally upgraded the MBR based <code class="language-plaintext highlighter-rouge">BaseSystem.dmg</code> in favor of GPT, which is not yet fully supported by VirtualBox EFI.  However, it is possible to upgrade from existing Yosemite installation.</p>
+
+<h4 id="yosemite--mavericks">Yosemite &amp; Mavericks</h4>
+
+<p>The new <code class="language-plaintext highlighter-rouge">InstallESD.dmg</code> is not bootable.  Therefore, we need to create a bootable install disk with <code class="language-plaintext highlighter-rouge">BaseSystem.dmg</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iesd <span class="nt">-i</span> /Applications/Install<span class="se">\ </span>OS<span class="se">\ </span>X<span class="se">\ </span>Yosemite.app <span class="nt">-o</span> Yosemite.dmg <span class="nt">-t</span> BaseSystem
+</code></pre></div></div>
+
+<p>All Macs using Intel Haswell CPU (Macs after 2013) need to fake their CPU as Ivy Bridge in order to boot the virtual machine.  Thank <a href="https://twitter.com/danmccombs/status/462241772521787392">@danmccombs</a> for this tip.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>VBoxManage modifyvm &lt;vmname&gt; <span class="nt">--cpuidset</span> 00000001 000306a9 00020800 80000201 178bfbff
+</code></pre></div></div>
+
+<p>On Mac Pro Early 2009 and other Macs that have ECC memory, <code class="language-plaintext highlighter-rouge">AppleTyMCEDriver.kext</code> will cause a kernel panic during the boot.  Thus we need to remove it.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iesd <span class="nt">-i</span> /Applications/Install<span class="se">\ </span>OS<span class="se">\ </span>X<span class="se">\ </span>Yosemite.app <span class="nt">-o</span> Yosemite.dmg <span class="nt">-t</span> BaseSystem <span class="nt">--uninstall-extension</span> AppleTyMCEDriver.kext
+</code></pre></div></div>
+
+<h4 id="mountain-lion--lion">Mountain Lion &amp; Lion</h4>
+
+<p>The lastest VirtualBox does not require modifying <code class="language-plaintext highlighter-rouge">InstallESD.dmg</code> any more.</p>
+
+<p>However, if your virtual machine was freezed during the boot process due to <code class="language-plaintext highlighter-rouge">AppleIntelCPUPowerManagement.kext</code>, you need to install <code class="language-plaintext highlighter-rouge">NullCPUPowerManagement.kext</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iesd <span class="nt">-i</span> /Applications/Install<span class="se">\ </span>OS<span class="se">\ </span>X<span class="se">\ </span>Mountain<span class="se">\ </span>Lion.app <span class="nt">-o</span> Mountain<span class="se">\ </span>Lion.dmg <span class="nt">--install-extension</span> NullCPUPowerManagement.kext
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="install">Install</h2>
+
+<p>The install process is same as normal OS X install on Mac.</p>
+
+<hr />
+
+<h2 id="done">Done</h2>
+
+<p><img src="/assets/img/2012/09/07/os-x-on-os-x/el-capitan.png" alt="OS X El Capitan on VirtualBox" /></p>
+
+<hr />
+
+<h1 id="im-not-talking-about-hackintosh">I’m NOT talking about Hackintosh</h1>
+
+<h2 id="software-license-agreement-for-os-x">SOFTWARE LICENSE AGREEMENT FOR OS X</h2>
+
+<blockquote>
+  <p>License from Mac App Store. If you obtained a license for the Apple Software from the Mac App Store, then subject to the terms and conditions of this License and as permitted by the Mac App Store Usage Rules set forth in the <a href="https://www.apple.com/legal/internet-services/itunes/ww/">App Store Terms and Conditions</a>(“Usage Rules”), you are granted a limited, non-transferable, non-exclusive license:</p>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>to install, use and run up to two (2) additional copies or instances of the Apple Software within virtual operating system environments on each Mac Computer you own or control that is already running the Apple Software, for purposes of: (a) software development; (b) testing during software development; (c) using OS X Server; or (d) personal, non-commercial use.</p>
+  </blockquote>
+</blockquote>
+</section>
+          <footer class="row"><div class="col text-start">
+              <div><span aria-hidden="true">&#x2190;&#xfe0e;&nbsp;</span>Previous</div>
+              <a class="nav-link p-0" href="/2012/08/01/markdown-style/" rel="prev">Markdown Style</a>
+            </div><div class="col text-center">
+              <div>Posted on</div>
+              <time datetime="2012-09-07T00:00:00-07:00">07 Sep 2012</time>
+            </div><div class="col text-end">
+              <div>Next<span aria-hidden="true">&nbsp;&#x2192;&#xfe0e;</span></div>
+              <a class="nav-link p-0" href="/2012/10/06/zsh-prompt/" rel="next">Zsh Prompt</a>
+            </div></footer>
+        </article>
+      </main><aside class="my-2 d-print-none"><section class="py-2">
+    <h1 class="h3">Talk to me</h1>
+    <ul class="nav row"><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="https://twitter.com/intent/tweet?related=ntkme&amp;screen_name=ntkme&amp;text=https%3A%2F%2Fntk.me%2F2012%2F09%2F07%2Fos-x-on-os-x%2F" target="_blank" rel="noopener">
+          <h2 class="lead">Tweet @ntkme</h2>
+          <span>for quick replies</span>
+        </a>
+      </li><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="mailto:i@ntk.me?subject=OS+X+on+OS+X">
+          <h2 class="lead">Email me</h2>
+          <span>for long replies</span>
+        </a>
+      </li></ul>
+  </section><section class="py-2">
+    <h1 class="h3">Follow me</h1>
+    <ul class="nav row"><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="https://twitter.com/ntkme" target="_blank" rel="noopener">
+          <h2 class="lead">on Twitter</h2>
+          <span>for new updates</span>
+        </a>
+      </li><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="https://github.com/ntkme" target="_blank" rel="noopener">
+          <h2 class="lead">on GitHub</h2>
+          <span>for new projects</span>
+        </a>
+      </li><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="/feed.xml" target="_blank">
+          <h2 class="lead">via Feed</h2>
+          <span>for new posts</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+</aside>
+<footer class="my-2"><section class="py-2">
+    <p>Copyright © <time datetime="2022-03-09T10:25:55-08:00">2022</time> <a class="nav-link d-inline" href="https://ntk.me/about/" rel="author">なつき</a>.<br>All rights reserved.</p>
+  </section></footer>
+</div>
+  </body>
+</html>

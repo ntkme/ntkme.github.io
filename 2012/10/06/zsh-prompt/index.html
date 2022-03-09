@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>Zsh Prompt</title>
+<link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://cloud.typography.com/6776312/789566/css/fonts.css">
+<link type="application/atom+xml" rel="alternate" href="https://ntk.me/feed.xml" title="夏樹の時間" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Zsh Prompt" />
+<meta name="author" content="なつき" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Beautiful and Informative" />
+<meta property="og:description" content="Beautiful and Informative" />
+<link rel="canonical" href="https://ntk.me/2012/10/06/zsh-prompt/" />
+<meta property="og:url" content="https://ntk.me/2012/10/06/zsh-prompt/" />
+<meta property="og:site_name" content="夏樹の時間" />
+<meta property="og:image" content="https://ntk.me/assets/img/2012/10/06/zsh-prompt/zsh-prompt@2x.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-10-06T00:00:00-07:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://ntk.me/assets/img/2012/10/06/zsh-prompt/zsh-prompt@2x.png" />
+<meta property="twitter:title" content="Zsh Prompt" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"なつき","url":"https://ntk.me/about/"},"dateModified":"2012-10-06T00:00:00-07:00","datePublished":"2012-10-06T00:00:00-07:00","description":"Beautiful and Informative","headline":"Zsh Prompt","image":"https://ntk.me/assets/img/2012/10/06/zsh-prompt/zsh-prompt@2x.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://ntk.me/2012/10/06/zsh-prompt/"},"url":"https://ntk.me/2012/10/06/zsh-prompt/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+  <body>
+    <div class="container my-3 my-md-4 my-xl-5"><header class="my-2">
+  <nav class="navbar navbar-expand py-2">
+    <a class="navbar-brand me-auto" href="/">
+      <h1>夏樹の時間</h1>
+      <h2 class="lead">なりきる、なったつもりで</h2>
+    </a>
+    <ul class="navbar-nav d-print-none me-auto me-sm-0"><li class="nav-item">
+        <a class="nav-link" href="/archive/">
+          <span aria-hidden="true">&nbsp;&#x2756;&nbsp;</span>posts
+          </a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/works/">
+          <span aria-hidden="true">&nbsp;&#x2605;&nbsp;</span>works
+          </a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/about/">
+          <span aria-hidden="true">&nbsp;&#x273f;&nbsp;</span>about
+          </a>
+      </li></ul>
+  </nav>
+</header>
+<main class="my-2">
+        <article class="py-2">
+          <header>
+            <h1>Zsh Prompt</h1>
+            <h2>Beautiful and Informative</h2>
+          </header>
+          <section class="html-md"><p><img src="/assets/img/2012/10/06/zsh-prompt/zsh-prompt@2x.png" alt="Zsh Prompt" srcset="/assets/img/2012/10/06/zsh-prompt/zsh-prompt@2x.png 2x" /></p>
+
+<p>Few days ago, I saw Steve Losh’s <a href="https://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/">My Extravagant Zsh Prompt</a>.  It was fantastic.  My fork has the very same basis, and I just use my approach to make it better.</p>
+
+<hr />
+
+<h1 id="prompt">PROMPT</h1>
+
+<h2 id="current-working-directory">Current Working Directory</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">/</code> is highlighted with a different color to make the path easy to read.</li>
+  <li>Parent directory names are truncated in favor of zsh path completion.</li>
+</ul>
+
+<h2 id="git-status">Git Status</h2>
+
+<p>It shows current branch or HEAD for detached state.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">!</code> means the repository is dirty.</li>
+  <li><code class="language-plaintext highlighter-rouge">?</code> means untracked files exist.</li>
+</ul>
+
+<h2 id="prompt-character">PROMPT Character</h2>
+
+<p>The PROMPT Character shows in following order:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">±</code> for <a href="https://git-scm.com/">Git</a></li>
+  <li><code class="language-plaintext highlighter-rouge">√</code> for root</li>
+  <li><code class="language-plaintext highlighter-rouge">↳</code></li>
+</ul>
+
+<hr />
+
+<h1 id="rprompt">RPROMPT</h1>
+
+<h2 id="battery-indicator">Battery Indicator</h2>
+
+<p>It indicates not only the remaining capacity but also the status (charging, discharging or full).  It is <a href="https://github.com/ntkme/home/blob/master/.config/bash/functions/battery-indicator">implemented in bash</a> and compatible with both OS X and Linux.</p>
+
+<hr />
+
+<h1 id="floating-prompt">Floating PROMPT</h1>
+
+<p>Instead of staying on the right side of the input line, the right prompt is floating on the top right.  If you understand CSS, the concept is just like the following code, except that the actual implementation in zsh is <a href="https://github.com/ntkme/home/blob/master/.config/zsh/functions/zsh_prompt_float">way more complex</a>.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">prompt</span> <span class="p">{</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">rprompt</span> <span class="p">{</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>Checkout my <a href="https://github.com/ntkme/home">dotfiles</a></p>
+
+</section>
+          <footer class="row"><div class="col text-start">
+              <div><span aria-hidden="true">&#x2190;&#xfe0e;&nbsp;</span>Previous</div>
+              <a class="nav-link p-0" href="/2012/09/07/os-x-on-os-x/" rel="prev">OS X on OS X</a>
+            </div><div class="col text-center">
+              <div>Posted on</div>
+              <time datetime="2012-10-06T00:00:00-07:00">06 Oct 2012</time>
+            </div><div class="col text-end">
+              <div>Next<span aria-hidden="true">&nbsp;&#x2192;&#xfe0e;</span></div>
+              <a class="nav-link p-0" href="/2012/11/25/yuri-yuan/" rel="next">Yuri Yuan</a>
+            </div></footer>
+        </article>
+      </main><aside class="my-2 d-print-none"><section class="py-2">
+    <h1 class="h3">Talk to me</h1>
+    <ul class="nav row"><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="https://twitter.com/intent/tweet?related=ntkme&amp;screen_name=ntkme&amp;text=https%3A%2F%2Fntk.me%2F2012%2F10%2F06%2Fzsh-prompt%2F" target="_blank" rel="noopener">
+          <h2 class="lead">Tweet @ntkme</h2>
+          <span>for quick replies</span>
+        </a>
+      </li><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="mailto:i@ntk.me?subject=Zsh+Prompt">
+          <h2 class="lead">Email me</h2>
+          <span>for long replies</span>
+        </a>
+      </li></ul>
+  </section><section class="py-2">
+    <h1 class="h3">Follow me</h1>
+    <ul class="nav row"><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="https://twitter.com/ntkme" target="_blank" rel="noopener">
+          <h2 class="lead">on Twitter</h2>
+          <span>for new updates</span>
+        </a>
+      </li><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="https://github.com/ntkme" target="_blank" rel="noopener">
+          <h2 class="lead">on GitHub</h2>
+          <span>for new projects</span>
+        </a>
+      </li><li class="nav-item col-6 col-sm-4 col-md-3">
+        <a class="nav-link" href="/feed.xml" target="_blank">
+          <h2 class="lead">via Feed</h2>
+          <span>for new posts</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+</aside>
+<footer class="my-2"><section class="py-2">
+    <p>Copyright © <time datetime="2022-03-09T10:25:55-08:00">2022</time> <a class="nav-link d-inline" href="https://ntk.me/about/" rel="author">なつき</a>.<br>All rights reserved.</p>
+  </section></footer>
+</div>
+  </body>
+</html>

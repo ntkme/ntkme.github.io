@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://ntk.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ntk.me/" rel="alternate" type="text/html" /><updated>2022-03-09T10:25:55-08:00</updated><id>https://ntk.me/feed.xml</id><title type="html">夏樹の時間</title><subtitle>なりきる、なったつもりで</subtitle><author><name>なつき</name><email>i@ntk.me</email></author><entry><title type="html">Pro Display XDR on Windows PC</title><link href="https://ntk.me/2021/10/12/pro-display-xdr-on-windows-pc/" rel="alternate" type="text/html" title="Pro Display XDR on Windows PC" /><published>2021-10-12T00:00:00-07:00</published><updated>2021-10-12T00:00:00-07:00</updated><id>https://ntk.me/2021/10/12/pro-display-xdr-on-windows-pc</id><content type="html" xml:base="https://ntk.me/2021/10/12/pro-display-xdr-on-windows-pc/"><![CDATA[<h1 id="pro-display-xdr-over-usb-32-gen-22-with-dsc">Pro Display XDR over USB 3.2 Gen 2×2 with DSC</h1>
+
+<p><img src="/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/settings@2x.png" alt="Settings &gt; Display &gt; Advanced display" srcset="/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/settings@2x.png 2x" /></p>
+
+<p>When Pro Display XDR is connected via the 40 Gbit/s Thunderbolt 3, it uses dual-link SST DisplayPort in High Bit Rate 3 (HBR3) mode.  A bandwidth of 36.64 Gbit/s is required for transmitting uncompressed 6K 60Hz 10-bit HDR video.  36.64 Gbit/s greatly exceeded the 20 Gbit/s of USB 3.2 Gen 2×2, thus it is not possible to transmit the video uncompressed over USB 3.2 Gen 2×2.</p>
+
+<p>However, it is lesser-known that Apple’s Pro Display XDR can actually run at its full <code class="language-plaintext highlighter-rouge">6016 × 3384, 60 Hz</code> with 10-bit HDR, without even using Thunderbolt 3.</p>
+
+<p>To use Pro Display XDR over USB 3.2 Gen 2×2, the video graphics card must support <a href="https://vesa.org/vesa-display-compression-codecs/dsc/">DSC (Display Stream Compression)</a>, a <em>visually lossless</em> compression standard.  With 10-bit HDR (30 bpp) compressed to 12 bpp at 2.5:1 compression ratio, the bandwidth required to deliver compressed 6K 60Hz 10-bit HDR video is only 14.66 Gbit/s.</p>
+
+<p>When Pro Display XDR is connected via USB 3.2 Gen 2×2, it uses single-link SST DisplayPort in High Bit Rate 2 (HBR2) mode.  The required bandwidth of 14.66 Gbit/s for transmitting compressed 6K 60Hz 10-bit HDR video is less than the 17.28 Gbit/s of HBR2.  USB-C DisplayPort Alternate Mode does not employ USB 2.0 lanes, so DisplayPort Alternate Mode can be used together with USB 2.0 for video and data transmission via a single cable.</p>
+
+<h2 id="adapters--cables">Adapters &amp; Cables</h2>
+
+<p>The key to get Pro Display XDR to work with USB 3.2 Gen 2×2 is to use a correct adapter or cable.</p>
+
+<p>For video graphics cards that have a built-in USB-C VirtualLink port, like Nvidia GeForce RTX 20 series or AMD Radeon RX 6000 series, full-featured USB-C to USB-C cables certified for 20 Gbps should work.  However, do not use active Thunderbolt 3 cables like the Thunderbolt 3 Pro Cable which comes with Pro Display XDR, because active Thunderbolt 3 cables are not backward compatible with USB 3.</p>
+
+<p>For video graphics cards that lack of a built-in USB-C VirtualLink port, a <strong>bidirectional</strong> USB-C to DisplayPort adapter or cable is needed.  In additional, in order to use the USB hub on the back of Pro Display XDR, adjust brightness, or change display preset, an adapter or cable that supports USB 2.0 lanes is required.</p>
+
+<p>It might sound weird, but the best DisplayPort to USB-C cable for Pro Display XDR available today is the <a href="https://www.belkin.com/us/support-article?articleNum=316883">Belkin Charge and Sync Cable for Huawei VR Glass</a>.</p>
+
+<h2 id="installing-apple-boot-camp-drivers">Installing Apple Boot Camp Drivers</h2>
+
+<p><img src="/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/boot-camp-control-panel@2x.png" alt="Boot Camp Control Panel" srcset="/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/boot-camp-control-panel@2x.png 2x" /></p>
+
+<p>Boot Camp drivers need to be installed to adjust brightness or change display preset under Windows.</p>
+
+<p>To install Boot Camp on any Windows PC, start the installer from Command Prompt:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>msiexec /i BootCamp.msi
+</code></pre></div></div>
+
+<hr />
+
+<p>With the right graphics card, the right cable, and right drivers, Pro Display XDR can deliver brilliant 6K 60Hz 10-bit HDR with its full functionality on any Windows PC.</p>]]></content><author><name>なつき</name><email>i@ntk.me</email></author><category term="Apple" /><category term="Pro Display XDR" /><category term="Windows" /><category term="PC" /><category term="Nvidia" /><category term="Thunderbolt" /><category term="DisplayPort" /><category term="USB" /><category term="DSC" /><category term="HDR" /><summary type="html"><![CDATA[6K 60Hz 10-bit HDR without Thunderbolt 3]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://ntk.me/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/settings@2x.png" /><media:content medium="image" url="https://ntk.me/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/settings@2x.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Podman in Crostini</title><link href="https://ntk.me/2021/05/14/podman-in-crostini/" rel="alternate" type="text/html" title="Podman in Crostini" /><published>2021-05-14T00:00:00-07:00</published><updated>2021-05-14T00:00:00-07:00</updated><id>https://ntk.me/2021/05/14/podman-in-crostini</id><content type="html" xml:base="https://ntk.me/2021/05/14/podman-in-crostini/"><![CDATA[<p><img src="/assets/img/2021/05/14/podman-in-crostini/rootless-podman@2.6666666666x.png" alt="Rootless Podman" srcset="/assets/img/2021/05/14/podman-in-crostini/rootless-podman@2.6666666666x.png 2.6666666666x" /></p>
+
+<p>Crostini, a.k.a. Linux on Chrome OS, runs a virtual machine named <code class="language-plaintext highlighter-rouge">termina</code>. Inside <code class="language-plaintext highlighter-rouge">termina</code>, a container named <code class="language-plaintext highlighter-rouge">penguin</code> running under <code class="language-plaintext highlighter-rouge">lxc</code> is exposed to users via the Terminal app.</p>
+
+<h1 id="install-podman-in-crostini">Install Podman in Crostini</h1>
+
+<p>The <code class="language-plaintext highlighter-rouge">penguin</code> container is based on Debian. The <a href="https://build.opensuse.org/project/show/devel:kubic:libcontainers:stable">Kubic project</a> provide <code class="language-plaintext highlighter-rouge">podman</code> packages for Debain.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-fsSL</span> <span class="s2">"https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/Debian_</span><span class="si">$(</span><span class="nb">.</span> /etc/os-release <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$VERSION_ID</span><span class="s2">"</span><span class="si">)</span><span class="s2">/Release.key"</span> | <span class="nb">sudo </span>gpg <span class="nt">--dearmor</span> <span class="nt">--yes</span> <span class="nt">-o</span> /usr/share/keyrings/kubic-libcontainers-archive-keyring.gpg
+<span class="nb">echo</span> <span class="s2">"deb [arch=</span><span class="si">$(</span>dpkg <span class="nt">--print-architecture</span><span class="si">)</span><span class="s2"> signed-by=/usr/share/keyrings/kubic-libcontainers-archive-keyring.gpg] https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/Debian_</span><span class="si">$(</span><span class="nb">.</span> /etc/os-release <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$VERSION_ID</span><span class="s2">"</span><span class="si">)</span><span class="s2">/ /"</span> | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
+<span class="nb">sudo </span>apt update <span class="nt">-qq</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-qq</span> <span class="nt">-y</span> podman buildah skopeo
+</code></pre></div></div>
+
+<h1 id="issues">Issues</h1>
+
+<p>Unfortunately, <code class="language-plaintext highlighter-rouge">podman</code> does not function properly out of box in Crostini. Below are a few common issues and how to fix them.</p>
+
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: mount `proc` to '/proc': Operation not permitted: OCI permission denied
+</code></pre></div></div>
+
+<p>This error is due to the following <code class="language-plaintext highlighter-rouge">lxc</code> config for <code class="language-plaintext highlighter-rouge">penguin</code> container:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">config</span><span class="pi">:</span>
+  <span class="na">security.nesting</span><span class="pi">:</span> <span class="s2">"</span><span class="s">false"</span>
+</code></pre></div></div>
+
+<p>The solution is to set <code class="language-plaintext highlighter-rouge">lxc</code> config <code class="language-plaintext highlighter-rouge">security.nesting</code> to <code class="language-plaintext highlighter-rouge">"true"</code>.</p>
+
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ERRO[0000] cannot find UID/GID for user linuxbrew: No subuid ranges found for user "linuxbrew" in /etc/subuid - check rootless mode in man pages. 
+WARN[0000] using rootless single mapping into the namespace. This might break some images. Check /etc/subuid and /etc/subgid for adding sub*ids 
+</code></pre></div></div>
+
+<p>This error is due to <code class="language-plaintext highlighter-rouge">/etc/subuid</code> and <code class="language-plaintext highlighter-rouge">/etc/subgid</code> missing entry for the current user.</p>
+
+<p>The solution is to add a range for current user in <code class="language-plaintext highlighter-rouge">/etc/subuid</code> and <code class="language-plaintext highlighter-rouge">/etc/subgid</code>.</p>
+
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: kernel does not support overlay fs: unable to create kernel-style whiteout: operation not permitted
+</code></pre></div></div>
+
+<p>This error is due to Linux kernel in Crostini does not have OverlayFS support.</p>
+
+<p>The solution is to use <code class="language-plaintext highlighter-rouge">btrfs</code> storage driver.</p>
+
+<hr />
+
+<h1 id="fixes">Fixes</h1>
+
+<p><img src="/assets/img/2021/05/14/podman-in-crostini/crosh@2.6666666666x.png" alt="crosh" srcset="/assets/img/2021/05/14/podman-in-crostini/crosh@2.6666666666x.png 2.6666666666x" /></p>
+
+<p>Open Google Chrome, press Ctrl + Alt + T to get the <code class="language-plaintext highlighter-rouge">crosh</code> shell, and run:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vsh termina
+</code></pre></div></div>
+
+<p>Once inside the <code class="language-plaintext highlighter-rouge">termina</code> virtual machine shell, run:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lxc config <span class="nb">set </span>penguin security.nesting <span class="nb">true
+</span>lxc restart penguin
+lxc <span class="nb">exec </span>penguin <span class="nt">--</span> /bin/sh <span class="nt">-c</span> <span class="s2">"printf '%s</span><span class="se">\n</span><span class="s2">' '1000:100000:65536' | tee /etc/subuid /etc/subgid"</span>
+lxc <span class="nb">exec </span>penguin <span class="nt">--</span> /bin/sed <span class="nt">-i</span> <span class="nt">-e</span> <span class="s1">'s/^driver[[:space:]]*=.*$/driver = "btrfs"/'</span> /etc/containers/storage.conf
+lxc <span class="nb">exec </span>penguin <span class="nt">--</span> /bin/rm <span class="nt">-rf</span> /var/lib/containers/storage
+</code></pre></div></div>
+
+<p>Now, rootless <code class="language-plaintext highlighter-rouge">podman</code> should work in Crostini!</p>]]></content><author><name>なつき</name><email>i@ntk.me</email></author><category term="Chrome OS" /><category term="Crostini" /><category term="Linux" /><category term="Podman" /><category term="Container" /><category term="Rootless" /><category term="LXC" /><category term="termina" /><category term="penguin" /><summary type="html"><![CDATA[Run Rootless Containers under Chrome OS]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://ntk.me/assets/img/2021/05/14/podman-in-crostini/rootless-podman@2.6666666666x.png" /><media:content medium="image" url="https://ntk.me/assets/img/2021/05/14/podman-in-crostini/rootless-podman@2.6666666666x.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Hardening TLS Configuration</title><link href="https://ntk.me/2020/06/18/hardening-tls-configuration/" rel="alternate" type="text/html" title="Hardening TLS Configuration" /><published>2020-06-18T00:00:00-07:00</published><updated>2020-06-18T00:00:00-07:00</updated><id>https://ntk.me/2020/06/18/hardening-tls-configuration</id><content type="html" xml:base="https://ntk.me/2020/06/18/hardening-tls-configuration/"><![CDATA[<h1 id="protocol-versions">Protocol Versions</h1>
+
+<ul>
+  <li>Use TLS 1.2 or later.</li>
+</ul>
+
+<h1 id="cipher-suites">Cipher Suites</h1>
+
+<ul>
+  <li>Support (perfect) forward secrecy (PFS).
+    <ul>
+      <li>ECDHE-ECDSA</li>
+      <li>ECDHE-RSA</li>
+      <li>DHE-RSA</li>
+    </ul>
+  </li>
+  <li>Offer 128-bit of security or more. Use Authenticated Encryption with Associated Data (AEAD) mode.
+    <ul>
+      <li>AES-256-GCM</li>
+      <li>CHACHA20-POLY1305</li>
+      <li>AES-128-GCM</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="recommendations-for-tls-implementations">Recommendations for TLS Implementations</h1>
+
+<h2 id="gnutls-priority-string">GnuTLS Priority String</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SECURE256:+SECURE128:-VERS-TLS1.0:-VERS-TLS1.1:-VERS-DTLS1.0:-AES-128-CBC:-AES-128-CCM:-AES-256-CBC:-AES-256-CCM:-RSA:-SHA1
+</code></pre></div></div>
+
+<hr />
+
+<p><a href="https://gnutls.org/manual/html_node/Priority-Strings.html#Using-Priority-Strings">GnuTLS manual - priority strings</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gnutls-cli --priority SECURE256:+SECURE128:-VERS-TLS1.0:-VERS-TLS1.1:-VERS-DTLS1.0:-AES-128-CBC:-AES-128-CCM:-AES-256-CBC:-AES-256-CCM:-RSA:-SHA1 --list
+
+Cipher suites for SECURE256:+SECURE128:-VERS-TLS1.0:-VERS-TLS1.1:-VERS-DTLS1.0:-AES-128-CBC:-AES-128-CCM:-AES-256-CBC:-AES-256-CCM:-RSA:-SHA1
+TLS_AES_256_GCM_SHA384                                  0x13, 0x02      TLS1.3
+TLS_CHACHA20_POLY1305_SHA256                            0x13, 0x03      TLS1.3
+TLS_AES_128_GCM_SHA256                                  0x13, 0x01      TLS1.3
+TLS_ECDHE_ECDSA_AES_256_GCM_SHA384                      0xc0, 0x2c      TLS1.2
+TLS_ECDHE_ECDSA_CHACHA20_POLY1305                       0xcc, 0xa9      TLS1.2
+TLS_ECDHE_ECDSA_AES_128_GCM_SHA256                      0xc0, 0x2b      TLS1.2
+TLS_ECDHE_RSA_AES_256_GCM_SHA384                        0xc0, 0x30      TLS1.2
+TLS_ECDHE_RSA_CHACHA20_POLY1305                         0xcc, 0xa8      TLS1.2
+TLS_ECDHE_RSA_AES_128_GCM_SHA256                        0xc0, 0x2f      TLS1.2
+TLS_DHE_RSA_AES_256_GCM_SHA384                          0x00, 0x9f      TLS1.2
+TLS_DHE_RSA_CHACHA20_POLY1305                           0xcc, 0xaa      TLS1.2
+TLS_DHE_RSA_AES_128_GCM_SHA256                          0x00, 0x9e      TLS1.2
+
+Protocols: VERS-TLS1.3, VERS-TLS1.2, VERS-DTLS1.2
+Ciphers: AES-256-GCM, CHACHA20-POLY1305, AES-128-GCM
+MACs: AEAD
+Key Exchange Algorithms: ECDHE-ECDSA, ECDHE-RSA, DHE-RSA
+Groups: GROUP-SECP384R1, GROUP-SECP521R1, GROUP-FFDHE8192, GROUP-SECP256R1, GROUP-X25519, GROUP-X448, GROUP-FFDHE2048, GROUP-FFDHE3072, GROUP-FFDHE4096, GROUP-FFDHE6144
+PK-signatures: SIGN-RSA-SHA384, SIGN-RSA-PSS-SHA384, SIGN-RSA-PSS-RSAE-SHA384, SIGN-ECDSA-SHA384, SIGN-ECDSA-SECP384R1-SHA384, SIGN-RSA-SHA512, SIGN-RSA-PSS-SHA512, SIGN-RSA-PSS-RSAE-SHA512, SIGN-ECDSA-SHA512, SIGN-ECDSA-SECP521R1-SHA512, SIGN-RSA-SHA256, SIGN-RSA-PSS-SHA256, SIGN-RSA-PSS-RSAE-SHA256, SIGN-ECDSA-SHA256, SIGN-ECDSA-SECP256R1-SHA256, SIGN-EdDSA-Ed25519, SIGN-EdDSA-Ed448
+</code></pre></div></div>
+
+<h2 id="openssl-cipher-list">OpenSSL Cipher List</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kEECDH+aECDSA:kEECDH+aRSA:kEDH+aRSA:-COMPLEMENTOFDEFAULT:-SSLv3:-TLSv1.0:-SHA256:-SHA384
+</code></pre></div></div>
+
+<h3 id="openssl-cipher-preference-list">OpenSSL Cipher Preference List</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256
+</code></pre></div></div>
+
+<hr />
+
+<p><a href="https://www.openssl.org/docs/man1.1.1/man1/ciphers.html">OpenSSL manual - ciphers</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ openssl ciphers -v kEECDH+aECDSA:kEECDH+aRSA:kEDH+aRSA:-COMPLEMENTOFDEFAULT:-SSLv3:-TLSv1.0:-SHA256:-SHA384 | column -t
+
+TLS_AES_256_GCM_SHA384         TLSv1.3  Kx=any   Au=any    Enc=AESGCM(256)             Mac=AEAD
+TLS_CHACHA20_POLY1305_SHA256   TLSv1.3  Kx=any   Au=any    Enc=CHACHA20/POLY1305(256)  Mac=AEAD
+TLS_AES_128_GCM_SHA256         TLSv1.3  Kx=any   Au=any    Enc=AESGCM(128)             Mac=AEAD
+ECDHE-ECDSA-AES256-GCM-SHA384  TLSv1.2  Kx=ECDH  Au=ECDSA  Enc=AESGCM(256)             Mac=AEAD
+ECDHE-ECDSA-CHACHA20-POLY1305  TLSv1.2  Kx=ECDH  Au=ECDSA  Enc=CHACHA20/POLY1305(256)  Mac=AEAD
+ECDHE-ECDSA-AES128-GCM-SHA256  TLSv1.2  Kx=ECDH  Au=ECDSA  Enc=AESGCM(128)             Mac=AEAD
+ECDHE-RSA-AES256-GCM-SHA384    TLSv1.2  Kx=ECDH  Au=RSA    Enc=AESGCM(256)             Mac=AEAD
+ECDHE-RSA-CHACHA20-POLY1305    TLSv1.2  Kx=ECDH  Au=RSA    Enc=CHACHA20/POLY1305(256)  Mac=AEAD
+ECDHE-RSA-AES128-GCM-SHA256    TLSv1.2  Kx=ECDH  Au=RSA    Enc=AESGCM(128)             Mac=AEAD
+DHE-RSA-AES256-GCM-SHA384      TLSv1.2  Kx=DH    Au=RSA    Enc=AESGCM(256)             Mac=AEAD
+DHE-RSA-CHACHA20-POLY1305      TLSv1.2  Kx=DH    Au=RSA    Enc=CHACHA20/POLY1305(256)  Mac=AEAD
+DHE-RSA-AES128-GCM-SHA256      TLSv1.2  Kx=DH    Au=RSA    Enc=AESGCM(128)             Mac=AEAD
+</code></pre></div></div>]]></content><author><name>なつき</name><email>i@ntk.me</email></author><category term="TLS" /><category term="GnuTLS" /><category term="OpenSSL" /><category term="Security" /><category term="PFS" /><category term="AEAD" /><category term="AES" /><category term="CHACHA20" /><summary type="html"><![CDATA[Modernize Transport Security]]></summary></entry><entry><title type="html">Wrong-headed Developers</title><link href="https://ntk.me/2018/12/06/wrong-headed-developers/" rel="alternate" type="text/html" title="Wrong-headed Developers" /><published>2018-12-06T00:00:00-08:00</published><updated>2018-12-06T00:00:00-08:00</updated><id>https://ntk.me/2018/12/06/wrong-headed-developers</id><content type="html" xml:base="https://ntk.me/2018/12/06/wrong-headed-developers/"><![CDATA[<p>From <a href="https://daringfireball.net/linked/2018/12/05/react-native-accessibility">Darling Fireball</a>:</p>
+
+<blockquote>
+  <p>Wrong-headed developers want to use [   ] like [   ] because they think it’ll save them time and resources, but if they want to do it right — and good [   ] is most certainly part of doing it right — they’re making things harder on themselves. What they should admit openly is that they don’t care about doing it right, and in many cases are trying to cover up for the fact that they don’t know how to do it right.</p>
+</blockquote>
+
+<p>Lovely wisdom right there.</p>]]></content><author><name>なつき</name><email>i@ntk.me</email></author><category term="Darling Fireball" /><summary type="html"><![CDATA[We can work it out]]></summary></entry><entry><title type="html">Keychain Trust Settings</title><link href="https://ntk.me/2015/03/27/security-trust-settings-tools/" rel="alternate" type="text/html" title="Keychain Trust Settings" /><published>2015-03-27T00:00:00-07:00</published><updated>2015-03-27T00:00:00-07:00</updated><id>https://ntk.me/2015/03/27/security-trust-settings-tools</id><content type="html" xml:base="https://ntk.me/2015/03/27/security-trust-settings-tools/"><![CDATA[<p><img src="/assets/img/2015/03/27/security-trust-settings-tools/cnnic-root@2x.png" alt="CNNIC ROOT" srcset="/assets/img/2015/03/27/security-trust-settings-tools/cnnic-root@2x.png 2x" /></p>
+
+<p>Only a few days after the <a href="https://greatfire.org/blog/2015/mar/we-are-under-attack">DDoS attack on Greatfire.org</a> began, <a href="https://googleonlinesecurity.blogspot.com/2015/03/maintaining-digital-certificate-security.html">Google</a> and <a href="https://blog.mozilla.org/security/2015/03/23/revoking-trust-in-one-cnnic-intermediate-certificate/">Mozilla</a> posted about China Internet Network Information Center (CNNIC) issued a certificate for man-in-the-middle attack.  Then, yesterday, the <a href="https://github.com/blog/1981-large-scale-ddos-attack-on-github-com">Large Scale DDoS Attack on GitHub</a> began, attempting to take down <a href="https://greatfire.org">Greatfire</a>’s accounts on GitHub.</p>
+
+<p>All these attacks just gave me more consern over cybersecurity, especially against man-in-the-middle attack from China.  Thus, I created <a href="https://github.com/ntkme/security-trust-settings-tools">security-trust-settings-tools</a>, a tool set to make it really easy to blacklist all user untrusted certificates on OS X.</p>
+
+<h1 id="keep-away-from-chinese-ssl-certificates">Keep Away from Chinese SSL Certificates</h1>
+
+<p>To blacklist all common Chinese SSL Certificates with my tools, simply try the OS X version of <a href="https://github.com/chengr28/RevokeChinaCerts">RevokeChinaCerts</a>.</p>]]></content><author><name>なつき</name><email>i@ntk.me</email></author><category term="security" /><category term="certificate" /><category term="blacklist" /><category term="revoke" /><category term="OS X" /><category term="Keychain.app" /><summary type="html"><![CDATA[Blacklist Any Untrusted Certificate]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://ntk.me/assets/img/2015/03/27/security-trust-settings-tools/cnnic-root@2x.png" /><media:content medium="image" url="https://ntk.me/assets/img/2015/03/27/security-trust-settings-tools/cnnic-root@2x.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">春宵</title><link href="https://ntk.me/2015/01/29/shunshou/" rel="alternate" type="text/html" title="春宵" /><published>2015-01-29T00:00:00-08:00</published><updated>2015-01-29T00:00:00-08:00</updated><id>https://ntk.me/2015/01/29/shunshou</id><content type="html" xml:base="https://ntk.me/2015/01/29/shunshou/"><![CDATA[<p>冬過ぎて<br />
+揺る揺る柳<br />
+花吹雪<br />
+月光を浴びる<br />
+酒飲む一人</p>]]></content><author><name>なつき</name><email>i@ntk.me</email></author><category term="短歌" /><category term="tanka" /><category term="poem" /><category term="日本語" /><category term="Japanese" /><summary type="html"><![CDATA[しゅんしょう]]></summary></entry><entry><title type="html">github:buttons</title><link href="https://ntk.me/2014/01/02/github-buttons/" rel="alternate" type="text/html" title="github:buttons" /><published>2014-01-02T00:00:00-08:00</published><updated>2014-01-02T00:00:00-08:00</updated><id>https://ntk.me/2014/01/02/github-buttons</id><content type="html" xml:base="https://ntk.me/2014/01/02/github-buttons/"><![CDATA[<h1 id="introducing-the-unofficial-githubbuttons">Introducing the Unofficial github:buttons</h1>
+
+<p><img src="/assets/img/2014/01/02/github-buttons/github-buttons@2x.png" alt="github:buttons" srcset="/assets/img/2014/01/02/github-buttons/github-buttons@2x.png 2x" /></p>
+
+<p>Made by developer and for developers, <a href="https://buttons.github.io/">github:buttons</a> used a very different approach comparing to other github buttons service.  It was designed with the flexibility to customize almost everything including link, text, icon, and count.  Unlike the widely used <a href="https://github.com/mdo/github-buttons">mdo/github-buttons</a>, in this <strong>pixel perfect</strong> <a href="https://github.com/ntkme/github-buttons">ntkme/github-buttons</a>, you will never worry about iframe sizing and overflowing.</p>
+
+<p><strong><a href="https://buttons.github.io/">Get started!</a></strong></p>
+
+<hr />
+
+<h1 id="the-making-of-the-githubbuttons">The Making of the github:buttons</h1>
+
+<h2 id="iframe">&lt;iframe&gt;</h2>
+
+<p>Twitter, Facebook, Google+ …  All buttons services from those big vendors are based on iframe.  Why?  Because iframe is protected by <a href="https://developer.mozilla.org/docs/Web/Security/Same-origin_policy">same-origin policy</a>, which means it won’t be affected by stylesheets or scripts in parent window.</p>
+
+<h3 id="its-all-about-the-same-origin-policy">It’s all about the same-origin policy</h3>
+
+<p>Saying that your website is hosted on domain A, and the buttons are hosted on the domain B, what would happen to the button iframe?  Well, first of all, if the button iframe on domain B is embedded directly, there is no way to get its content size because the access to its content is blocked by same-origin policy.  That’s exactly the problem <a href="https://github.com/mdo/github-buttons">mdo/github-buttons</a> faces.  What about render the button in an empty iframe?  Not a bad idea.  In that case, since the iframe does not have the src attribute, it’s considered to be in the same-origin as domain A.  However, web fonts from domain B will be blocked in the iframe on domain A unless the <a href="https://www.w3.org/TR/cors/">Cross-Origin Resource Sharing</a> on domain B is properly configured.</p>
+
+<p>So, the answer is combining the two cases here.</p>
+
+<ol>
+  <li>Create an empty iframe as a sandbox in domain A and render the button.</li>
+  <li>Calculate the rendered button size.</li>
+  <li>Open a new iframe in domain B and render the button again.</li>
+  <li>Set the new iframe size to fit the previously calculated button size.</li>
+</ol>
+
+<h4 id="pixel-perfect-content-size">Pixel Perfect Content Size</h4>
+
+<p>The default size of an iframe is 300px by 150px, which can change the document flow significantly.  So, it comes the idea of hiding an iframe before it is resized properly.  <code class="language-plaintext highlighter-rouge">visibility: hidden;</code> simply does not work because it still takes up space.  <code class="language-plaintext highlighter-rouge">display: none;</code> is not a choice because IE 11 does not render it at all.  The only way to do it correctly is setting <code class="language-plaintext highlighter-rouge">width: 1px; height: 0;</code>.  With that, calling <code class="language-plaintext highlighter-rouge">body.scrollWidth()</code> and <code class="language-plaintext highlighter-rouge">body.scrollHeight()</code> should return the content size of an iframe.</p>
+
+<p>That is not the end of the story.  <code class="language-plaintext highlighter-rouge">body.scrollWidth()</code> returns an integer rounded from the actual float value.  On an @2x display, the size can be off by 1/2px.  In the case that the number is rounded down, the iframe will be cut off.  The solution is to use <code class="language-plaintext highlighter-rouge">body.getBoundingClientRect()</code>, which returns the float, and ceil it to the closest physical pixel.</p>
+
+<p>However, that is still not the end of the story.  WebKit rounds down iframe size to closest 1/2px on @3x display, which means that in the worst case the iframe will be cut off by 1/3px.  Thus, the ultimate solution is to round the float to the closest physical pixel, then ceil the value to closest 1/2px, which is illustrated by the following formula.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">px</span> <span class="o">*</span> <span class="nx">devicePixelRatio</span><span class="p">)</span> <span class="o">/</span> <span class="nx">devicePixelRatio</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">||</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<h4 id="iframeonload">iframe.onload</h4>
+
+<p>iframe onload event is not reliable because some browsers implemented the onload event in a wrong way, especially when there are DOM changes during the page loading.  In my tests, IE 9 and Android Browser 2.x fire the onload event before the dynamically injected sciprts complete execution.  Presto-based Opera has a even more interesting bug.  With memory cache turned on, it will never fullfill a javascript request in iframe that is dynamically injected before DOM ready, after the file is cached in memory.  So, a polyfill for the iframe.onload event is required for those browsers.</p>
+
+<hr />
+
+<h2 id="script-async-deferscript">&lt;script async defer&gt;&lt;/script&gt;</h2>
+
+<p><strong>Performance</strong> does matter.</p>
+
+<p>So both async and defer attribute are used on the script element.  They ensure that the script will never slow down the DOM loading.  Also, to reduce requests, the scripts used in parent window and iframe are combined into one script, which lets the browser read it from cache.</p>
+
+<hr />
+
+<h2 id="octicons">Octicons</h2>
+
+<p>GitHub’s iconic web font is pretty awesome, but it brings a little bit trouble.  Most of the major browsers request a web font only after they found it’s used somewhere in the web page, and they load the web fonts <em>asynchronously</em>.  Sometimes it happens that the <code class="language-plaintext highlighter-rouge">window.onload</code> event is fired earlier than the web fonts are rendered, which leads to the incorrect iframe size.</p>
+
+<p>In addition, there is no native <code class="language-plaintext highlighter-rouge">load</code> event for web font.  The <a href="https://github.com/typekit/webfontloader">typekit/webfontloader</a> may be a solution, but it still load the web font <em>asynchronously</em>, so it doesn’t help much.  The web font loader also increases the requests and slows down the whole process in this situation.</p>
+
+<h3 id="pre-rendering-octicons">Pre-rendering Octicons</h3>
+
+<p>The only reliable choice left is pre-rendering, because it doesn’t depend on the web font load event.  I calculated all the icon sizes in em unit, then generated a stylesheet containing their sizes.</p>
+
+<h3 id="if-lte-ie-8-octicons-endif">&lt;!–[if lte IE 8]–&gt; Octicons &lt;![endif]–&gt;</h3>
+
+<p>This project <strong>do</strong> support the old IE.  It sounds crazy, isn’t it?  Actually it is not too difficult since most of the incompatibilities are came from the octicons.</p>
+
+<p>IE 6 and 7 don’t support css pseudo-elements <code class="language-plaintext highlighter-rouge">:before</code> and <code class="language-plaintext highlighter-rouge">:after</code>, so I use a css expression hack like this one.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.octicon-mark-github</span> <span class="p">{</span> <span class="py">zoom</span><span class="p">:</span> <span class="n">expression</span><span class="p">(</span> <span class="n">this</span><span class="p">.</span><span class="n">innerHTML</span> <span class="err">=</span> <span class="s2">'&amp;#xf00a;'</span> <span class="p">);</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>IE 8 is worse than IE 6 and 7.  Although IE 8 supports <code class="language-plaintext highlighter-rouge">:before</code> used in octicons, it still <em>randomly</em> uses the local font instead of the octicons.  <a href="https://stackoverflow.com/questions/9809351">This related question on Stack Overflow</a> gives a solution that forcing IE 8 to redraw octicons.</p>
+
+<hr />
+
+<h1 id="still-want-to-know-more">Still want to know more?</h1>
+
+<p>Take a look at <a href="https://github.com/ntkme/github-buttons">ntkme/github-buttons</a>!</p>]]></content><author><name>なつき</name><email>i@ntk.me</email></author><category term="GitHub" /><category term="Button" /><category term="Follow" /><category term="Star" /><category term="Fork" /><category term="Issue" /><category term="Gist" /><category term="Octicon" /><category term="API" /><summary type="html"><![CDATA[The buttons for developers]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://ntk.me/assets/img/2014/01/02/github-buttons/github-buttons@2x.png" /><media:content medium="image" url="https://ntk.me/assets/img/2014/01/02/github-buttons/github-buttons@2x.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">iESD</title><link href="https://ntk.me/2013/12/01/iesd/" rel="alternate" type="text/html" title="iESD" /><published>2013-12-01T00:00:00-08:00</published><updated>2013-12-01T00:00:00-08:00</updated><id>https://ntk.me/2013/12/01/iesd</id><content type="html" xml:base="https://ntk.me/2013/12/01/iesd/"><![CDATA[<h1 id="introducing-iesd">Introducing iESD</h1>
+
+<p>I created the shell script <code class="language-plaintext highlighter-rouge">InstallESD.dmg.tool</code> when I was trying to install <a href="/2012/09/07/os-x-on-os-x/">OS X on OS X</a>.  However, every time Apple releases a major version of OS X, Apple changes the structure of <code class="language-plaintext highlighter-rouge">InstallESD.dmg</code>.  As a result, the complexity of the script keeps increasing and the script is already over 350 lines.  Now, it’s time to stop the crappy shell scripting.</p>
+
+<hr />
+
+<p>Here comes the new <a href="https://rubygems.org/gems/iesd">iESD</a>.  Written entirely in Ruby.</p>]]></content><author><name>なつき</name><email>i@ntk.me</email></author><category term="OS X" /><category term="InstallESD" /><category term="BaseSystem" /><category term="Ruby" /><summary type="html"><![CDATA[Customize OS X InstallESD]]></summary></entry><entry><title type="html">$PATH</title><link href="https://ntk.me/2013/05/04/path-environment-variable/" rel="alternate" type="text/html" title="$PATH" /><published>2013-05-04T00:00:00-07:00</published><updated>2013-05-04T00:00:00-07:00</updated><id>https://ntk.me/2013/05/04/path-environment-variable</id><content type="html" xml:base="https://ntk.me/2013/05/04/path-environment-variable/"><![CDATA[<p>On POSIX and Unix-like operating systems, the $PATH is specified as a list of directories separated by <code class="language-plaintext highlighter-rouge">:</code>.  It’s easy to change the $PATH by hardcoding.  However, sometimes it is needed to modify the $PATH programmatically and the most difficult part is removing a path from the $PATH elegantly.  The definition of elegant here is using a single line command that is human readable, portable, short and fast.  The common idea is using the $IFS, but the $IFS is ugly.  Instead of that, I am going to use <code class="language-plaintext highlighter-rouge">sed</code>.</p>
+
+<h1 id="the-idea">The Idea</h1>
+
+<blockquote>
+  <p>I got this idea from jQuery’s <a href="https://github.com/jquery/jquery/blob/master/src/attributes/classes.js">.removeClass()</a>.  Thank you, jQuery.</p>
+</blockquote>
+
+<p>Assuming we need to remove <code class="language-plaintext highlighter-rouge">/usr/local/bin</code> from the original $PATH shown as below.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+</code></pre></div></div>
+
+<p>First, prepend and append <code class="language-plaintext highlighter-rouge">:</code> to the $PATH.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:
+</code></pre></div></div>
+
+<p>Then, replace <code class="language-plaintext highlighter-rouge">:/usr/local/bin:</code> with <code class="language-plaintext highlighter-rouge">:</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:/usr/bin:/bin:/usr/sbin:/sbin:
+</code></pre></div></div>
+
+<p>Now, remove the prepended and appended <code class="language-plaintext highlighter-rouge">:</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin:/bin:/usr/sbin:/sbin
+</code></pre></div></div>
+
+<p>Done!</p>
+
+<h1 id="the-code">The Code</h1>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">PATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="s2">":</span><span class="k">${</span><span class="nv">PATH</span><span class="k">}</span><span class="s2">:"</span> | <span class="nb">sed</span> <span class="nt">-e</span> <span class="s2">"s:</span><span class="se">\:</span><span class="s2">/usr/local/bin</span><span class="se">\:</span><span class="s2">:</span><span class="se">\:</span><span class="s2">:g"</span> <span class="nt">-e</span> <span class="s2">"s/^://"</span> <span class="nt">-e</span> <span class="s2">"s/:</span><span class="nv">$/</span><span class="s2">/"</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">/usr/local/bin</code> can be replaced with any path or variable containing path.</p>
+</blockquote>
+
+<h2 id="how-it-works">How it works</h2>
+
+<ol>
+  <li>The <code class="language-plaintext highlighter-rouge">echo</code> command prepends and appends <code class="language-plaintext highlighter-rouge">:</code> to the $PATH.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">|</code> pipes the output of <code class="language-plaintext highlighter-rouge">echo</code> to <code class="language-plaintext highlighter-rouge">sed</code>.</li>
+  <li>The first <code class="language-plaintext highlighter-rouge">sed</code> command removes the path.  In this command, <code class="language-plaintext highlighter-rouge">:</code> is used as a delimiter, because <code class="language-plaintext highlighter-rouge">:</code> is the only character reserved in the $PATH.  As a result, the actual <code class="language-plaintext highlighter-rouge">:</code> in the patterns are escaped as <code class="language-plaintext highlighter-rouge">\:</code>.  Although it has some impact on readability, the path to remove will never need to be escaped any more, which means you can use command like <code class="language-plaintext highlighter-rouge">sed -e "s:\:${path_to_remove}\::\::g"</code> without worrying about escaping.</li>
+  <li>The second and the third <code class="language-plaintext highlighter-rouge">sed</code> command removes the prepended and appended <code class="language-plaintext highlighter-rouge">:</code>.</li>
+</ol>
+
+<hr />
+
+<h1 id="the-bottom-line">The bottom line</h1>
+
+<p>If you are using <a href="https://brew.sh/">Homebrew</a>, you may like to add this to your shell startup files.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">test</span> <span class="nt">-x</span> /usr/local/bin/brew <span class="o">&amp;&amp;</span> <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:<span class="sb">`</span><span class="nb">echo</span> <span class="s2">":</span><span class="k">${</span><span class="nv">PATH</span><span class="k">}</span><span class="s2">:"</span> | <span class="nb">sed</span> <span class="nt">-e</span> <span class="s2">"s:</span><span class="se">\:</span><span class="s2">/usr/local/bin</span><span class="se">\:</span><span class="s2">:</span><span class="se">\:</span><span class="s2">:g"</span> <span class="nt">-e</span> <span class="s2">"s/^://"</span> <span class="nt">-e</span> <span class="s2">"s/:</span><span class="nv">$/</span><span class="s2">/"</span><span class="sb">`</span>
+</code></pre></div></div>]]></content><author><name>なつき</name><email>i@ntk.me</email></author><category term="PATH" /><category term="Environment Variable" /><category term="Unix" /><category term="Linux" /><category term="BSD" /><category term="OS X" /><summary type="html"><![CDATA[Remove a path in the elegant way]]></summary></entry><entry><title type="html">Swift Dictation.app</title><link href="https://ntk.me/2012/12/17/dictation/" rel="alternate" type="text/html" title="Swift Dictation.app" /><published>2012-12-17T00:00:00-08:00</published><updated>2012-12-17T00:00:00-08:00</updated><id>https://ntk.me/2012/12/17/dictation</id><content type="html" xml:base="https://ntk.me/2012/12/17/dictation/"><![CDATA[<p><img src="/assets/img/2012/12/17/dictation/icon.png" alt="Swift Dictation" /></p>
+
+<p>OS X 10.8 comes with Dictation.  However, it does not work well in a multilingual environment because it can only set one language.  Then OS X 10.9 comes out with the support of multiple dictation languages, but you still cannot switch between different languages on keyboard easily.  In iOS, the dictation language is always synchronized with your keyboard language.  So, why don’t we bring the iOS feature to OS X?  Here is the solution, a status bar application called <code class="language-plaintext highlighter-rouge">Swift Dictation</code>.</p>
+
+<h1 id="dictation-language-goes-with-input-method-language">Dictation Language goes with Input Method Language</h1>
+
+<p><img src="/assets/img/2012/12/17/dictation/input-method-and-dictation-language@2x.png" alt="Input Method &lt;=&gt; Dictation" srcset="/assets/img/2012/12/17/dictation/input-method-and-dictation-language@2x.png 2x" /></p>
+
+<p>It is simple.  The small application just watches for changes of input methods then switches the dictation languages <strong>on the fly</strong>.</p>
+
+<h1 id="user-guide">User Guide</h1>
+
+<ol>
+  <li><a href="https://support.apple.com/kb/HT5449">Enable OS X Dictaton</a> in System Preferences.</li>
+  <li>Install this application and make it open at login.</li>
+  <li>Set the accents that you prefer.</li>
+  <li>Done! The dictation language is going with your input method now.</li>
+</ol>
+
+<hr />
+
+<p><a href="https://cl.ly/ZxvB">Download Swift Dictation</a><br />
+<a href="https://github.com/ntkme/Swift-Dictation">Checkout the source</a></p>]]></content><author><name>なつき</name><email>i@ntk.me</email></author><category term="Swift Dictation" /><category term="OS X" /><category term="Multilingual" /><category term="Languages" /><summary type="html"><![CDATA[The missing frontend for OS X Dictation]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://ntk.me/assets/img/2012/12/17/dictation/icon.png" /><media:content medium="image" url="https://ntk.me/assets/img/2012/12/17/dictation/icon.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
