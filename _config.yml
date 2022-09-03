@@ -1,0 +1,48 @@
+theme: null
+local_theme: sumi
+
+timezone: America/Los_Angeles
+encoding: utf-8
+permalink: pretty
+
+sass:
+  implementation: sass-embedded
+  sourcemap: development
+  style: compressed
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      language: en
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+url: https://ntk.me
+title: 夏樹の時間
+description: Natsuki Times
+
+navbar_pages:
+  -
+    path: archive.md
+    title: posts
+    icon: "&#x2756;"
+  -
+    path: works.md
+    title: works
+    icon: "&#x2605;"
+  -
+    path: about.md
+    title: about
+    icon: "&#x273f;"
+
+author:
+  name: なつき
+  url: https://ntk.me/about/
+  email: i@ntk.me
+  twitter: ntkme
