@@ -18,14 +18,14 @@ jobs:
           ssh-key: ${{ secrets.DEPLOY_KEY }}
           submodules: true
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ruby
           bundler-cache: true
+
+      - name: Setup node
+        uses: actions/setup-node@v3
 
       - name: Install dependencies
         run: |
