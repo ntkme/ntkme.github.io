@@ -6,7 +6,6 @@ encoding: utf-8
 permalink: pretty
 
 sass:
-  implementation: sass-embedded
   sourcemap: development
   style: compressed
 
