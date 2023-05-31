@@ -26,7 +26,7 @@ For video graphics cards that have a built-in USB-C VirtualLink port, like Nvidi
 For video graphics cards that lack of a built-in USB-C VirtualLink port, a **bidirectional** USB-C to DisplayPort adapter or cable is needed.  In additional, in order to use the USB hub on the back of Pro Display XDR, adjust brightness, or change display preset, an adapter or cable that supports USB 2.0 lanes is required.
 
 The best DisplayPort to USB-C cable or dongle supporting both DisplayPort Alternate Mode and USB 2.0 channel are the following:
-- [Belkin Charge and Sync Cable for Huawei VR Glass](https://www.belkin.com/us/support-article?articleNum=316883)
+- [Belkin Charge and Sync Cable for Huawei VR Glass](https://www.belkin.com/support-article/?articleNum=316883)
 - [Wacom Link Plus](https://estore.wacom.com/wacom-link-plus-dongle-ack42819.html)
 
 ## Installing Apple Boot Camp Drivers
