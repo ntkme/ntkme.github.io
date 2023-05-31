@@ -24,5 +24,4 @@ It is simple.  The small application just watches for changes of input methods t
 
 ---
 
-[Download Swift Dictation](https://cl.ly/ZxvB)  
 [Checkout the source](https://github.com/ntkme/Swift-Dictation)

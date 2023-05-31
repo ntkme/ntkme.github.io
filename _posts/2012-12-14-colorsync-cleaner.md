@@ -11,5 +11,4 @@ ColorSync Utility in OS X remembers every device you plugged in, and there is no
 
 ---
 
-[Download ColorSync Cleaner](https://cl.ly/MjoG)  
 [Checkout the source](https://github.com/ntkme/ColorSync-Cleaner)
