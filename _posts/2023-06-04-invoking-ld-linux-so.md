@@ -80,7 +80,7 @@ The unmodified `dart` executable works on NixOS when explicitly invoked through 
 
 Normally, when facing this kind of issues, NixOS users would have to face the challenge of either modifying downloaded programs or building programs from source, which the vast majority of people using NixOS are not familiar with.  Even after getting an offical repackaging in Nixpkgs, the compliants from NixOS users would not stop, as many users may still choose to download instead.
 
-A radical solution was borned to put a stop:
+A radical solution was born to put a stop:
 
 ``` ruby
 # Try to execute ELF.
