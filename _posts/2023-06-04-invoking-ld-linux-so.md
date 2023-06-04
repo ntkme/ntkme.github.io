@@ -24,7 +24,7 @@ bash: ./dart: No such file or directory
 -rwxr-xr-x 1 root root 5154328 May 31 23:59 dart
 ```
 
-Running the `dart` executable downloaded from [dart.dev](https://dart.dev/) would fail in a very confusing way on NixOS.  At a glance it may look like `bash` is complaining about file `./dart` does not exist.  However, checking with `ls` would reject that idea immediately.  This is why many NixOS users get lost, where they have no choice but to seek help from the developer.  It is pretty common for developers to have no cue given the limited information that appear te be contradictory.  I don't blame puzzled NixOS users, as I would probably have no idea without my previous experience of dealing with three different libc on a single Linux system.
+Running the `dart` executable downloaded from [dart.dev](https://dart.dev/) would fail in a very confusing way on NixOS.  At a glance it may look like `bash` is complaining about file `./dart` does not exist.  However, checking with `ls` would reject that idea immediately.  This is why many NixOS users get lost, where they have no choice but to seek help from the developer.  It is pretty common for developers to have no cue given the limited information that appear to be contradictory.  I don't blame puzzled NixOS users, as I would probably have no idea without my previous experience of dealing with three different libc on a single Linux system.
 
 # Executable and Linking Format
 
