@@ -130,7 +130,7 @@ Use the `printf()` function.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
   <title>html-md.css</title>
-  <link rel="stylesheet" href="https://unpkg.com/html-md.css@3.0.0/dist/html-md.css" integrity="sha384-DJQnz+pdiayvnbp0Idbo9qIYroVfiDasEHtlD8rSbNclbGUREU8ju/YQ1NMq7Fdp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/html-md.css/dist/html-md.css" crossorigin="anonymous">
 </head>
 <body>
   <div class="html-md"></div>
