@@ -27,7 +27,7 @@ For video graphics cards that lack of a built-in USB-C VirtualLink port, a **bid
 
 The best DisplayPort to USB-C cable or dongle supporting both DisplayPort Alternate Mode and USB 2.0 channel are the following:
 - [Belkin Charge and Sync Cable for Huawei VR Glass](https://www.belkin.com/support-article/?articleNum=316883)
-- Wacom Link Plus
+- Wacom Link Plus (ACK42819)
 
 ## Installing Apple Boot Camp Drivers
 
