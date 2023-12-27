@@ -89,7 +89,7 @@ begin
 # Catch the "no such file or directory" error.
 rescue Errno::ENOENT
   # Locate `ld-linux.so` by parsing `/proc/self/exe`.
-  # See: https://github.com/ntkme/sass-embedded-host-ruby/blob/main/lib/sass/elf.rb
+  # See: https://github.com/sass-contrib/sass-embedded-host-ruby/blob/main/lib/sass/elf.rb
   require_relative 'elf'
 
   # Rethrow if `ld-linux.so` cannot be located.
