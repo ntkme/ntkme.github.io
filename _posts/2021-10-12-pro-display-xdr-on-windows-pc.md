@@ -29,7 +29,7 @@ The key to get Pro Display XDR to work with USB 3.2 Gen 2×2 is to use a correct
 
 For video graphics cards that have a built-in USB-C VirtualLink port, like Nvidia GeForce RTX 20 series or AMD Radeon RX 6000 series, full-featured USB-C to USB-C cables certified for 20 Gbit/s should work.  However, do not use active Thunderbolt cables like the Thunderbolt 3 Pro Cable which comes with Pro Display XDR, because active Thunderbolt cables are not backward compatible with USB 3.
 
-For video graphics cards that lack of a built-in USB-C VirtualLink port, a **bidirectional** USB-C to DisplayPort adapter or cable is needed.  In additional, in order to use the USB hub on the back of Pro Display XDR, adjust brightness, or change display preset, an adapter or cable that supports USB 2.0 lanes is required.
+For video graphics cards without a built-in USB-C VirtualLink port, a **bidirectional** USB-C to DisplayPort adapter or cable is needed.  In additional, in order to use the USB hub on the back of Pro Display XDR, adjust brightness, or change display preset, an adapter or cable that supports USB 2.0 lanes is required.
 
 The best DisplayPort to USB-C cable or dongle supporting both DisplayPort Alternate Mode and USB 2.0 channel are the following:
 - [Belkin Charge and Sync Cable for Huawei VR Glass](https://www.belkin.com/support-article/?articleNum=316883)
