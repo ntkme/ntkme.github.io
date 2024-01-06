@@ -40,13 +40,4 @@ Stylesheet that makes markdown rendered html look like plain markdown.
 
 ---
 
-# [Swift Dictation.app]({% post_url 2012-12-17-dictation %}) <sup>OS X</sup>
-
-A status bar application synchronizing OS X dictation language with input method language. Just like iOS' behavior.
-
-<a class="github-button" href="https://github.com/ntkme/Swift-Dictation" data-icon="octicon-star" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="{% if jekyll.environment == "production" %}true{% else %}false{% endif %}" aria-label="Star ntkme/Swift-Dictation on GitHub">Star</a>
-<a class="github-button" href="https://github.com/ntkme/Swift-Dictation/fork" data-icon="octicon-repo-forked" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="{% if jekyll.environment == "production" %}true{% else %}false{% endif %}" aria-label="Fork ntkme/Swift-Dictation on GitHub">Fork</a>
-
----
-
 <script async defer src="https://buttons.github.io/buttons.js"></script>
