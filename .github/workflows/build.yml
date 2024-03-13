@@ -18,12 +18,6 @@ jobs:
           ssh-key: ${{ secrets.DEPLOY_KEY }}
           submodules: true
 
-      # https://github.com/protocolbuffers/protobuf/pull/15203
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: ruby
-      - run: bundle add rake
-
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
