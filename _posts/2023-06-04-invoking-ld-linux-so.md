@@ -100,4 +100,40 @@ rescue Errno::ENOENT
 end
 ```
 
-It has been shipped as part of the [sass-embedded](https://rubygems.org/gems/sass-embedded) gem, for which I've heard zero complaints from NixOS users since then.
+# One More Thing
+
+The solution above was shipped as part of the [sass-embedded](https://rubygems.org/gems/sass-embedded) gem. It has worked for a while, until NixOS managed to break it with another innovative **non-standard** behavior in 24.05 release:
+
+> NixOS now installs a stub ELF loader that prints an informative error message when users attempt to run binaries not made for NixOS.
+
+In the past, there was either a properly working `ld-linux.so` or none at its standard location. Now in NixOS a [`stub-ld`](https://nix.dev/permalink/stub-ld) that does nothing but immediately exits with an error message is installed at the standard location of `ld-linux.so`, so that `ENOENT` is no more when calling `exec`. The `exec` system call will always succeed in running `stub-ld`, the `stub-ld` will always fail, and the actual foreign binary will never execute. To avoid `stub-ld` altogether, the command must be modified to begin with a real `ld-linux.so`, before even calling `exec`.
+
+A more radical solution was born:
+
+``` ruby
+# Locate `ld-linux.so` by parsing `/proc/self/exe`.
+# See: https://github.com/sass-contrib/sass-embedded-host-ruby/blob/main/lib/sass/elf.rb
+require_relative '../../lib/sass/elf'
+
+module Sass
+  module CLI
+    # Preparsed `ld-linux.so` of the foreign binary, different for each platform
+    INTERPRETER = '/lib/ld-linux-aarch64.so.1'
+
+    # The last component of the preparsed `ld-linux.so`
+    INTERPRETER_SUFFIX = '/ld-linux-aarch64.so.1'
+
+    # Prepend the `ld-linux.so` of `/proc/self/exe` if it differs from the `ld-linux.so` of the foreign binary
+    # yet shares the same filename indicating that they are compatible.
+    COMMAND = [
+      *(ELF::INTERPRETER if ELF::INTERPRETER != INTERPRETER && ELF::INTERPRETER&.end_with?(INTERPRETER_SUFFIX)),
+      File.absolute_path('dart-sass/src/dart', __dir__).freeze,
+      File.absolute_path('dart-sass/src/sass.snapshot', __dir__).freeze
+    ].freeze
+  end
+
+  private_constant :CLI
+end
+```
+
+It's unlikely that NixOS will be able to break it again. I hope.
