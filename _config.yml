@@ -8,6 +8,11 @@ permalink: pretty
 sass:
   sourcemap: development
   style: compressed
+  silence_deprecations:
+    - color-functions
+    - global-builtin
+    - import
+    - mixed-decls
 
 defaults:
   -
