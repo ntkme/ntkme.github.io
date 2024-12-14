@@ -6,6 +6,11 @@ description: my projects
 
 # [{{ site.title }}]({% link index.md %})
 
+- No ads.
+- No cookies.
+- No login.
+- No paywall.
+
 Here is my blog.
 
 <a class="github-button" href="https://github.com/ntkme" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="{% if jekyll.environment == "production" %}true{% else %}false{% endif %}" aria-label="Follow @ntkme on GitHub">Follow @ntkme</a>
