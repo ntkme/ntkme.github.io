@@ -22,8 +22,8 @@ Here is my blog.
 
 A Ruby library that will communicate with Embedded Dart Sass using the Embedded Sass protocol.
 
-<a class="github-button" href="https://github.com/ntkme/sass-embedded-host-ruby" data-icon="octicon-star" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="{% if jekyll.environment == "production" %}true{% else %}false{% endif %}" aria-label="Star ntkme/sass-embedded-host-ruby on GitHub">Star</a>
-<a class="github-button" href="https://github.com/ntkme/sass-embedded-host-ruby/fork" data-icon="octicon-repo-forked" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="{% if jekyll.environment == "production" %}true{% else %}false{% endif %}" aria-label="Fork ntkme/sass-embedded-host-ruby on GitHub">Fork</a>
+<a class="github-button" href="https://github.com/sass-contrib/sass-embedded-host-ruby" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="{% if jekyll.environment == "production" %}true{% else %}false{% endif %}" aria-label="Star sass-contrib/sass-embedded-host-ruby on GitHub">Star</a>
+<a class="github-button" href="https://github.com/sass-contrib/sass-embedded-host-ruby/fork" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-repo-forked" data-size="large" data-show-count="{% if jekyll.environment == "production" %}true{% else %}false{% endif %}" aria-label="Fork sass-contrib/sass-embedded-host-ruby on GitHub">Fork</a>
 
 ---
 
@@ -31,8 +31,8 @@ A Ruby library that will communicate with Embedded Dart Sass using the Embedded 
 
 The unofficial GitHub buttons.
 
-<a class="github-button" href="https://github.com/ntkme/github-buttons" data-icon="octicon-star" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="{% if jekyll.environment == "production" %}true{% else %}false{% endif %}" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
-<a class="github-button" href="https://github.com/ntkme/github-buttons/fork" data-icon="octicon-repo-forked" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="{% if jekyll.environment == "production" %}true{% else %}false{% endif %}" aria-label="Fork ntkme/github-buttons on GitHub">Fork</a>
+<a class="github-button" href="https://github.com/buttons/github-buttons" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="{% if jekyll.environment == "production" %}true{% else %}false{% endif %}" aria-label="Star buttons/github-buttons on GitHub">Star</a>
+<a class="github-button" href="https://github.com/buttons/github-buttons/fork" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-repo-forked" data-size="large" data-show-count="{% if jekyll.environment == "production" %}true{% else %}false{% endif %}" aria-label="Fork buttons/github-buttons on GitHub">Fork</a>
 
 ---
 
