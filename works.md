@@ -18,7 +18,7 @@ Here is my blog.
 
 ---
 
-# [sass-embedded](https://github.com/ntkme/sass-embedded-host-ruby) <sup>ruby</sup>
+# [sass-embedded](https://github.com/sass-contrib/sass-embedded-host-ruby) <sup>ruby</sup>
 
 A Ruby library that will communicate with Embedded Dart Sass using the Embedded Sass protocol.
 
