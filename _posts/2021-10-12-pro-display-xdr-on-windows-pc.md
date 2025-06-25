@@ -37,17 +37,24 @@ The best DisplayPort to USB-C adapters and cables supporting both DisplayPort Al
 - FIBBR TF-VRA
 - Wacom Link Plus (ACK42819)
 
-## Installing Apple Boot Camp Drivers
+## Installing Apple Boot Camp
 
 ![Boot Camp Control Panel](/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/boot-camp-control-panel@2x.png){: srcset="/assets/img/2021/10/12/pro-display-xdr-on-windows-pc/boot-camp-control-panel@2x.png 2x" }
 
 Boot Camp drivers need to be installed to adjust brightness or change display preset under Windows.
 
-Normally Apple Boot Camp would refuse to install on non-Apple devices. To install Boot Camp on any Windows PC, start the installer from Command Prompt:
+1. [Microsoft Visual C++ Redistributable](https://aka.ms/vs/17/release/vc_redist.x64.exe) must be installed first, or the Boot Camp Control Panel would show "No supported external displays connected" due to `BootCampService.exe` crashing in the background.
 
-``` sh
-msiexec /i BootCamp.msi
-```
+2. Only the followings are needed, everything else can be deleted before installation.
+    - `AppleDisplayNullDriver`
+    - `AppleProDisplayXDRUSBCompositeDevice`
+    - `BootCamp.msi`
+
+3. Normally Apple Boot Camp would refuse to install on non-Apple devices. To install Boot Camp on any Windows PC, start the installer from the Command Prompt as administrator:
+
+    ``` sh
+    msiexec /i BootCamp.msi
+    ```
 
 ---
 
