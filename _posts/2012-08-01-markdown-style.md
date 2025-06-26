@@ -72,13 +72,28 @@ So she was considering, in her own mind (as well as she could, for the hot day m
 
 # Code Block
 
-<pre><code>I am a code block.
-
-  へ　へ
-  の　の
-  　も　
-  　へ　
-</code></pre>
+<pre><code>                 ;i.
+                  M$L                    .;i.
+                  M$Y;                .;iii;;.
+                 ;$YY$i._           .iiii;;;;;
+                .iiiYYYYYYiiiii;;;;i;iii;; ;;;
+              .;iYYYYYYiiiiiiYYYiiiiiii;;  ;;;
+           .YYYY$$$$YYYYYYYYYYYYYYYYiii;; ;;;;
+         .YYY$$$$$$YYYYYY$$$$iiiY$$$$$$$ii;;;;
+        :YYYF`,  TYYYYY$$$$$YYYYYYYi$$$$$iiiii;
+        Y$MM: \  :YYYY$$P"````"T$YYMMMMMMMMiiYY.
+     `.;$$M$$b.,dYY$$Yi; .(     .YYMMM$$$MMMMYY
+   .._$MMMMM$!YYYYYYYYYi;.`"  .;iiMMM$MMMMMMMYY
+    ._$MMMP` ```""4$$$$$iiiiiiii$MMMMMMMMMMMMMY;
+     MMMM$:       :$$$$$$$MMMMMMMMMMM$$MMMMMMMYYL
+    :MMMM$$.    .;PPb$$$$MMMMMMMMMM$$$$MMMMMMiYYU:
+     iMM$$;;: ;;;;i$$$$$$$MMMMM$$$$MMMMMMMMMMYYYYY
+     `$$$$i .. ``:iiii!*"``.$$$$$$$$$MMMMMMM$YiYYY
+      :Y$$iii;;;.. ` ..;;i$$$$$$$$$MMMMMM$$YYYYiYY:
+       :$$$$$iiiiiii$$$$$$$$$$$MMMMMMMMMMYYYYiiYYYY.
+        `$$$$$$$$$$$$$$$$$$$$MMMMMMMM$YYYYYiiiYYYYYY
+         YY$$$$$$$$$$$$$$$$MMMMMMM$$YYYiiiiiiYYYYYYY
+        :YYYYYY$$$$$$$$$$$$$$$$$$YYYYYYYiiiiYYYYYYi'</code></pre>
 
 ---
 
