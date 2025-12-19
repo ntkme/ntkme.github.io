@@ -11,6 +11,7 @@ sass:
   silence_deprecations:
     - color-functions
     - global-builtin
+    - if-function
     - import
     - mixed-decls
 
