@@ -43,7 +43,7 @@ The best DisplayPort to USB-C adapters and cables supporting both DisplayPort Al
 
 Boot Camp drivers need to be installed to adjust brightness or change display preset under Windows.
 
-1. [Microsoft Visual C++ Redistributable](https://aka.ms/vs/17/release/vc_redist.x64.exe) must be installed first, or the Boot Camp Control Panel would show "No supported external displays connected" due to `BootCampService.exe` crashing in the background.
+1. [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist) must be installed first, or the Boot Camp Control Panel would show "No supported external displays connected" due to `BootCampService.exe` crashing in the background.
 
 2. Only the followings are needed, everything else can be deleted before installation.
     - `AppleDisplayNullDriver`
