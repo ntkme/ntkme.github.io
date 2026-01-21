@@ -13,7 +13,6 @@ sass:
     - global-builtin
     - if-function
     - import
-    - mixed-decls
 
 defaults:
   -
