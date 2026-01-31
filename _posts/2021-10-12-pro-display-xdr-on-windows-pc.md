@@ -39,7 +39,7 @@ The best DisplayPort to USB-C adapters and cables supporting both DisplayPort Al
 
 ## Add-in Card
 
-Given that verified cables and adapters are incresingly difficult to source, an alternative is to get a Thunderbolt or USB 4 add-in card that converts DisplayPort to Thunderbolt or USB.
+Given that verified cables and adapters are incresingly difficult to source, an alternative is to get a Thunderbolt 3, or USB 4, or newer add-in card that can convert DisplayPort to Thunderbolt 3.
 
 Be careful that add-in cards have very limited montherboards compatibility.  For ASM4242 based USB 4 add-in cards, including the built-in ones on certain motherborads like ProArt X870E-Creator WiFi, make sure to update the add-in card firmware to the latest.
 
