@@ -52,7 +52,7 @@ Boot Camp drivers need to be installed to adjust brightness or change display pr
 1. [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist) must be installed first, or the Boot Camp Control Panel would show "No supported external displays connected" due to `BootCampService.exe` crashing in the background.
 
 2. The drivers can be extracted from the [BootCampESD.pkg](https://swcdn.apple.com/content/downloads/48/55/002-34411-A_GQNVCB6UOC/m67xlo3dipbdxmdeeocd39hmxka5o9dg2k/BootCampESD.pkg). If you don't have a Mac, use this pre-extracted archive [WindowsSupport.zip](https://github.com/BootCampESD/BootCampESD/releases/download/002-34411-A_GQNVCB6UOC/WindowsSupport.zip). Only the followings  inside `BootCamp/Drivers/Apple` are needed, everything else can be deleted before installation.
-    - `AppleDisplayNullDriver`
+    - `AppleDisplayNullDriver` (not `AppleNullDriver`)
     - `AppleProDisplayXDRUSBCompositeDevice`
     - `BootCamp.msi`
 
