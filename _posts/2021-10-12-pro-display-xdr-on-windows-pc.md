@@ -55,6 +55,7 @@ Boot Camp drivers need to be installed to adjust brightness or change display pr
     - `AppleDisplayNullDriver` (not `AppleNullDriver`)
     - `AppleProDisplayXDRUSBCompositeDevice`
     - `BootCamp.msi`
+    - `DriverInst.exe`
 
 3. Normally Apple Boot Camp would refuse to install on non-Apple devices. To install Boot Camp on any Windows PC, start the installer from the Command Prompt as administrator:
 
