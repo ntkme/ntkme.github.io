@@ -39,9 +39,11 @@ The best DisplayPort to USB-C adapters and cables supporting both DisplayPort Al
 
 ## Add-in Card
 
-Given that verified cables and adapters are incresingly difficult to source, an alternative is to get a Thunderbolt 3, or USB 4, or newer add-in card that can convert DisplayPort to Thunderbolt 3.
+Given that verified cables and adapters are incresingly difficult to source, an alternative is to get a Thunderbolt 3, or USB 4, or newer add-in card that can convert DisplayPort to Thunderbolt 3.  Some motherboards have built-in cards, while other motherboards have very limited compatibility with add-in cards.
 
-Be careful that add-in cards have very limited montherboards compatibility.  For ASM4242 based USB 4 add-in cards, including the built-in ones on certain motherborads like ProArt X870E-Creator WiFi, make sure to update the add-in card firmware to the latest.
+Many Intel Thunderbolt cards have a common issue where preconnected devices do not work from a cold boot, which can lead to "No supported external displays connected" in the Boot Camp Control Panel.  Rebooting or replugging the cable can fix it temporarily.
+
+ASM4242 based USB 4 add-in cards, including the built-in ones on motherborads like ProArt X870E-Creator WiFi, need to have the firmware updated to the latest for connection stability.
 
 ## Installing Apple Boot Camp
 
@@ -55,7 +57,6 @@ Boot Camp drivers need to be installed to adjust brightness or change display pr
     - `AppleDisplayNullDriver` (not `AppleNullDriver`)
     - `AppleProDisplayXDRUSBCompositeDevice`
     - `BootCamp.msi`
-    - `DriverInst.exe`
 
 3. Normally Apple Boot Camp would refuse to install on non-Apple devices. To install Boot Camp on any Windows PC, start the installer from the Command Prompt as administrator:
 
